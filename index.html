@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Kalu 🐾 | Critical care experience (13–16 December)</title>
+
+    <!-- Emoji favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Bulma CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#111827',
+                        muted: '#6b7280',
+                        danger: '#b91c1c'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --ink: #1f2937;
+            --ash: #5b6472;
+            --moon: #e3e7ef;
+            --mist: #f6f7fb;
+            --ember: #b45309;
+            --stone: #111827;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--ink);
+            background: radial-gradient(circle at top, #ffffff 0%, #f2f3f7 45%, #e7ebf2 100%);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Fraunces', serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .memorial-card {
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .progress-track {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 6px;
+            width: 100%;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #334155, #b45309);
+        }
+
+        .floating-paw {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 40;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .memory-photo {
+            filter: grayscale(100%);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .ig-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .ig-pill a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+    </style>
+</head>
+
+<body class="leading-relaxed">
+    <div class="progress-track">
+        <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <!-- ================= NAV ================= -->
+    <nav class="glass sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">🐾</span>
+                <div>
+                    <p class="font-semibold text-lg">Kalu’s Loss</p>
+                    <p class="text-xs text-gray-500">A memorial and full account</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-sm">
+                <a href="#overview" class="button is-light is-small">Overview</a>
+                <a href="#life" class="button is-light is-small">Kalu’s Life</a>
+                <a href="#accident" class="button is-light is-small">Accident</a>
+                <a href="#hospital" class="button is-light is-small">Hospital Days</a>
+                <a href="#issues" class="button is-light is-small">Issues</a>
+                <a href="#gallery" class="button is-light is-small">Gallery</a>
+                <a href="#closing" class="button is-light is-small">Final Words</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="#closing" class="button is-dark is-small">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="ml-2">In memory</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="px-6 py-16">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <p class="text-sm uppercase tracking-widest text-gray-500">In loving memory</p>
+                <p class="mt-3">
+                    <span class="ig-pill">
+                        <i class="fa-brands fa-instagram"></i>
+                        <a href="https://instagram.com/kalu_bow_wow" target="_blank" rel="noreferrer">@kalu_bow_wow</a>
+                    </span>
+                </p>
+                <h1 class="text-4xl md:text-5xl font-bold mt-3 mb-4">Our Dog Kalu 🐾</h1>
+                <p class="text-lg text-gray-700 mb-6">
+                    Critical care experience with our dog Kalu (13–16 December).
+                    This page is a full account shared for awareness and preparedness.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#hospital" class="button is-dark is-medium">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span class="ml-2">Read the hospital days</span>
+                    </a>
+                    <a href="#issues" class="button is-warning is-medium">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span class="ml-2">Key concerns</span>
+                    </a>
+                </div>
+            </div>
+            <div class="glass rounded-2xl p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-semibold text-gray-500">A companion, a fighter</p>
+                        <h2 class="text-2xl font-bold">Kalu’s Journey</h2>
+                    </div>
+                    <span class="text-3xl">🕯️</span>
+                </div>
+                <div class="mt-5">
+                    <img class="rounded-xl w-full" src="kalu_gallery/banner%20image.jpg" alt="Kalu banner image">
+                </div>
+                <div class="mt-4 flex items-center gap-4 text-sm text-gray-600">
+                    <i class="fa-solid fa-location-dot text-amber-600"></i>
+                    <span>Pune • 11–16 December</span>
+                </div>
+                <div class="mt-4">
+                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_5ngs2ksb.json"
+                        background="transparent" speed="1" style="width: 140px; height: 140px;" loop autoplay>
+                    </lottie-player>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= OVERVIEW ================= -->
+    <section id="overview" class="max-w-5xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold mb-4">Critical care experience with our dog Kalu (13–16 December)</h2>
+        <div class="p-6 bg-white rounded-2xl memorial-card">
+            <h3 class="text-lg font-semibold mb-2">Important note upfront</h3>
+            <p class="mb-3">
+                We have no complaints about the main doctors — Dr. Leila Fernandez, Dr. Phiroz Khambatta, and Dr.
+                Muskan.
+                Our concerns are about systems, processes, empathy, communication, availability, and monopoly-driven
+                gaps,
+                not about intent to treat.
+            </p>
+            <p class="text-sm text-gray-600">
+                This review is not written in anger. It is written so other pet parents can connect the dots before an
+                emergency, not after.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= TIMELINE INDEX ================= -->
+    <section id="timeline-index" class="max-w-5xl mx-auto px-6 py-6">
+        <div class="p-5 bg-white rounded-2xl memorial-card">
+            <h3 class="text-lg font-semibold mb-3">Page index</h3>
+            <div class="flex flex-wrap gap-3 text-sm">
+                <a href="#life" class="button is-light is-small">Life (2016–2025)</a>
+                <a href="#accident" class="button is-light is-small">Accident & early response (11–12 Dec)</a>
+                <a href="#hospital" class="button is-light is-small">Hospital days (13–16 Dec)</a>
+                <a href="#issues" class="button is-light is-small">Issues to know</a>
+                <a href="#gallery" class="button is-light is-small">Photos</a>
+                <a href="#closing" class="button is-light is-small">Final words</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KALU'S LIFE ================= -->
+    <section id="life" class="max-w-5xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold mb-4">Kalu’s life with us</h2>
+        <div class="p-6 bg-white rounded-2xl memorial-card space-y-4">
+            <p>
+                Kalu, our indie dog, looked like a Border Collie and found us on 26 Nov 2016 on the road near our house.
+            </p>
+            <p>
+                He was a charming, smart boy — always understanding, never troubled, never broke anything. He understood
+                more than 40–50 Marathi words and was closely attached to our family.
+            </p>
+            <p>
+                We never chained him because we had a big flat and a big garden space behind. He never asked for dog
+                food.
+                He liked milk, bread, and chicken tandoor on weekends, and recently started enjoying Drools and
+                Choco-cos,
+                but he was never demanding.
+            </p>
+            <p>
+                We went through many difficult situations at home, including financial issues — he was always emotional
+                support and truly a family member.
+            </p>
+            <p>
+                We never liked bikes or mopeds, but recently he started enjoying car rides. He was ready whenever we
+                took
+                car keys for office, and we used to give him small rides or take him to multiple places.
+            </p>
+            <p>
+                It felt like he started enjoying freedom due to our new car and the stability we recently got.
+            </p>
+            <p>
+                He recently celebrated his 9th birthday on 26 Nov at Ladghar Beach. It was my dad’s wish to take him to
+                the beach; even though he was scared of water (even for bath), he enjoyed the beach and the vibes.
+            </p>
+            <p class="font-semibold">
+                But the day of the accident came on 11 Dec.
+            </p>
+            <p>
+                As usual we left him for walk as daily routine — he goes, takes his walk and comes back. But this day
+                was
+                different. I received a call from a friend about his accident by drunk drivers on two wheelers. They
+                flew away.
+                We took Kalu to Petozone, then Vetic Kalyani Nagar, then Raintree, Ghorpadi.
+            </p>
+            <div class="pt-2">
+                <h3 class="text-lg font-semibold mb-2">Key dates</h3>
+                <ul class="list-disc pl-6 text-sm text-gray-700 space-y-1">
+                    <li>26 Nov 2016: Kalu found us near our house.</li>
+                    <li>26 Nov 2025: 9th birthday at Ladghar Beach.</li>
+                    <li>11 Dec: Accident day.</li>
+                    <li>12 Dec: Emergency admission refused due to anniversary event.</li>
+                    <li>13–16 Dec: Hospital days and critical care.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ACCIDENT ================= -->
+    <section id="accident" class="max-w-5xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold mb-4">Accident and early response</h2>
+        <div class="p-6 bg-white rounded-2xl memorial-card space-y-4 text-sm text-gray-700">
+            <p>
+                Kalu had no external wounds, but major internal injuries involving the head, neck, left eye, spinal
+                cord,
+                lungs, liver, kidneys, bladder, and internal bleeding. We fully accept his condition was critical and
+                life-threatening.
+            </p>
+            <p>
+                On 11 December, a friend called us about his accident. It was caused by drunk drivers on two wheelers
+                who fled the spot.
+            </p>
+            <p>
+                Initial stabilization was done at Petozone Clinic, Pimple Saudagar, and we were advised to move to a
+                24/7
+                advanced hospital.
+            </p>
+            <p>
+                Crown Vet, Aundh, did not even come out to see our dog. Only a watchman interacted with us as a
+                mediator.
+            </p>
+            <p>
+                Multiple vets told us Raintree is the only place in Pune with advanced facilities like MRI and 24/7 ICU.
+                We reached Raintree because there was no real choice.
+            </p>
+            <p>
+                Our dog was admitted to Vetic, Kalyani Nagar for two days (11–12 December). They did immediate treatment
+                like X-ray and blood tests. We saw some improvement, but they did not have next-level treatment like
+                lung
+                fluid removal and MRI. We had to sleep in the car and barely got 2–3 hours of rest.
+                The doctors there were empathic, explained things in normal words, and kept continued monitoring by
+                one person near our dog.
+            </p>
+            <p>
+                On 12 December, we personally approached Raintree for emergency admission. First we were told there was
+                no occupancy. Later, we were refused due to their annual anniversary event. This was the first major red
+                flag.
+            </p>
+        </div>
+        <div class="mt-6">
+            <img class="rounded-2xl w-full" src="kalu_gallery/hospital%20cirital%20image.jpg"
+                alt="Kalu during hospital care">
+        </div>
+    </section>
+
+    <!-- ================= HOSPITAL DAYS ================= -->
+    <section id="hospital" class="max-w-5xl mx-auto px-6 py-12 space-y-6">
+        <div class="p-6 bg-white rounded-2xl memorial-card">
+            <h2 class="text-2xl font-bold mb-4">Day 1 – 13 December (Admission & MRI)</h2>
+            <h3 class="text-lg font-semibold mb-2">Admission & handling</h3>
+            <p>Our dog Kalu was admitted on 13 December at Raintree.</p>
+            <p>Despite neck and spinal injuries, no stretcher was used. He was lifted by hand, which risked further
+                damage.</p>
+            <h3 class="text-lg font-semibold mt-4 mb-2">MRI & anesthesia</h3>
+            <p>MRI urgency was not taken up immediately. It happened only after repeated follow-ups and when the
+                anesthesia expert was available.</p>
+            <p>The MRI was scheduled after around 3:30 PM because the anesthesia expert was available only then.</p>
+            <p>Consent for anesthesia was taken on the spot, without proper prior explanation.</p>
+            <p>We were informed after sedation that there was no guarantee Kalu would survive anesthesia.</p>
+            <p>MRI and anesthesia were handled by Dr. Muskan.</p>
+            <p>Raintree used a nearby MRI center within about 1 km of the hospital.</p>
+            <p>After reversal, Kalu responded to us, lifted his ears, opened his eyes, and tried to stand. We felt hope.
+            </p>
+            <h3 class="text-lg font-semibold mt-4 mb-2">After MRI</h3>
+            <p>We agreed to every test, without thinking about money.</p>
+            <p>We were told Kalu may never walk again, and we accepted full responsibility for lifelong care.</p>
+            <p>Tick fever tests were sent outside Pune.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl memorial-card">
+            <h2 class="text-2xl font-bold mb-4">Night of 13 December – Serious trust-breaking moment</h2>
+            <p>We left around 10:00 PM after seeing Kalu responsive and alert.</p>
+            <p>At 10:45 PM, we received a call saying his condition was not good.</p>
+            <p>We offered to come immediately, but we were told we are not allowed to see him due to visiting-hour
+                rules.</p>
+            <p>Later that night, we were told Kalu was stable.</p>
+            <p>During the same phone call, we clearly heard shouting, alarms, and staff arguing about monitoring
+                equipment not being attached to a dog.</p>
+            <p>The call ended suddenly.</p>
+            <p>We recorded the call because we were becoming suspicious about the handling.</p>
+            <p>Later, we were told it was “some other dog”.</p>
+            <p>At 12:05 AM our calls were not picked. When they finally responded, they said our dog was okay.</p>
+            <p>As dog parents, hearing this while our own dog was critical was terrifying and disturbing.</p>
+            <p>We still do not know which dog it was or what happened.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl memorial-card">
+            <h2 class="text-2xl font-bold mb-4">Day 2 – 14 December (Blood & plasma crisis)</h2>
+            <h3 class="text-lg font-semibold mb-2">Communication & empathy</h3>
+            <p>Most explanations were given in technical medical language.</p>
+            <p>Only when Dr. Leila Fernandez explained in simple words did we clearly understand Kalu’s condition.</p>
+            <p>The assigned vet Anushree showed no empathy, no emotional support, and constant negativity.</p>
+            <p>In Marathi: “चेहऱ्यावरची माशी पण उडत नव्हती.”</p>
+            <p>We were told we could move Kalu elsewhere, but he was not in a condition to travel long distance.</p>
+            <h3 class="text-lg font-semibold mt-4 mb-2">Plasma emergency</h3>
+            <p>Kalu urgently required fresh plasma due to clotting issues.</p>
+            <p>Raintree had no plasma separation centrifuge and no blood bank support.</p>
+            <p>We were told to arrange donor dogs ourselves with strict criteria.</p>
+            <p>Criteria: vaccinated, 25 kg+, no history of tick fever, and no antibiotics or ongoing medication.</p>
+            <p>We contacted NGOs, friends, Instagram, WhatsApp, and Facebook groups.</p>
+            <p>Lady X, a complete stranger, came from far with her dog purely out of kindness.</p>
+            <p>Even then, sampling was delayed and cross-matching was pushed to the next morning due to lab
+                availability.</p>
+            <p>We asked the hospital to share a donor post on their page; it was posted only after a delay.</p>
+            <p>This was emotionally and physically draining for a family already breaking down.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl memorial-card">
+            <h2 class="text-2xl font-bold mb-4">Day 3 – 15 December (MRI report delay & transfusion)</h2>
+            <h3 class="text-lg font-semibold mb-2">MRI report delay</h3>
+            <p>MRI report was not shared because the neurologist was unavailable.</p>
+            <p>Only after Tata Small Animals Hospital, Mumbai, contacted the same doctor on our behalf did the report
+                arrive.</p>
+            <p>Until then, information was unclear and incomplete.</p>
+            <p>Reports on the Vet Buddy portal were also delayed; we had to request uploads repeatedly.</p>
+            <p>This made us feel that external pressure was needed to receive basic medical clarity.</p>
+            <h3 class="text-lg font-semibold mt-4 mb-2">Blood transfusion</h3>
+            <p>Plasma separation failed due to lack of equipment.</p>
+            <p>Lady X’s dog was kept fasting (food for 4 hours, water for 2 hours) before blood extraction.</p>
+            <p>The collected blood was kept for natural plasma separation, but it did not work in time.</p>
+            <p>We searched for a centrifuge option; Dr. Khambta said it could work, but time was running out.</p>
+            <p>The plan changed to direct blood transfusion.</p>
+            <p>We were told Kalu had liver and kidney issues, bladder urine was red due to internal injuries, and his
+                paws were swelling.</p>
+            <p>We had arranged nearly 10 dogs; some didn’t match, some didn’t fit weight criteria.</p>
+            <p>Some people offered to send blood samples through porter and dunzo with ice packs.</p>
+            <p>Transfusion was stopped midway as Kalu’s temperature increased.</p>
+            <p>We were told it would take 4 hours, and they would stop if his temperature rose. It was stopped after
+                about 30 minutes.</p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl memorial-card">
+            <h2 class="text-2xl font-bold mb-4">Day 4 – 16 December (Kalu passed away)</h2>
+            <p>Kalu stopped breathing around 12 PM.</p>
+            <p>CPR was attempted.</p>
+            <p>Even after clear signs that he was gone, manual air pumping continued, which was extremely distressing to
+                witness as pet parents.</p>
+            <p>We asked them to stop the air pumping. The balloon-like tube was removed later, but other monitoring
+                equipment was not removed immediately.</p>
+            <p>We had been asked for daily advance payments of 25k; the bill was always above that amount.</p>
+            <p>We cleared all bills without any argument.</p>
+            <p>We took Kalu for cremation near Naidu Hospital, Sangamwadi, called his loved ones, performed our rituals,
+                and said our final goodbye.</p>
+        </div>
+    </section>
+
+    <!-- ================= ISSUES ================= -->
+    <section id="issues" class="max-w-5xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold mb-4">⚠️ Important issues pet parents should know</h2>
+        <ul class="list-disc pl-6 space-y-2 text-sm text-gray-700 bg-white rounded-2xl p-6 memorial-card">
+            <li>Monopoly in Pune for advanced 24/7 veterinary care</li>
+            <li>Emergency admission refused due to anniversary event</li>
+            <li>Anniversary party at the same location while emergency admission was refused</li>
+            <li>Lack of empathy and emotional support during critical care</li>
+            <li>Unsafe handling of accident dog (no stretcher used)</li>
+            <li>Delays driven by staff availability, not medical urgency</li>
+            <li>Poor night-time monitoring communication</li>
+            <li>No in-house plasma separation or blood bank support</li>
+            <li>Pet parents forced to arrange donor dogs themselves</li>
+            <li>MRI report delayed due to doctor unavailability</li>
+            <li>Multiple dogs kept together in one ICU room</li>
+            <li>Strict visiting hours even during deterioration</li>
+            <li>Heavy use of technical jargon, poor simple explanations</li>
+            <li>Reports on Vet Buddy were delayed despite repeated requests</li>
+            <li>Advance payment taken daily without guidance on insurance</li>
+            <li>Emergency lab testing not available in the evening</li>
+            <li>Stitches loosened the next day in our case</li>
+        </ul>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section id="gallery" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold mb-6">Kalu’s photos</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img class="rounded-xl gallery-img" src="kalu_gallery/play%20mode.jpg" alt="Kalu in play mode">
+            <img class="rounded-xl gallery-img" src="kalu_gallery/cozy%20mode.jpg" alt="Kalu in cozy mode">
+            <img class="rounded-xl gallery-img" src="kalu_gallery/watching%20tv.jpg" alt="Kalu watching TV">
+            <img class="rounded-xl gallery-img" src="kalu_gallery/sleep%20mode.jpg" alt="Kalu resting">
+            <img class="rounded-xl gallery-img" src="kalu_gallery/garden.jpg" alt="Kalu in the garden">
+            <img class="rounded-xl gallery-img" src="kalu_gallery/enjoying%20festive.jpg"
+                alt="Kalu enjoying festive time">
+            <img class="rounded-xl gallery-img" src="kalu_gallery/enjoying%20bed.jpg" alt="Kalu enjoying bed">
+            <img class="rounded-xl gallery-img" src="kalu_gallery/waiting%20mode.jpg" alt="Kalu waiting">
+        </div>
+    </section>
+
+    <!-- ================= CLOSING ================= -->
+    <section id="closing" class="max-w-5xl mx-auto px-6 py-12">
+        <div class="p-6 bg-white rounded-2xl memorial-card">
+            <h2 class="text-2xl font-bold mb-4">Final words for pet parents</h2>
+            <p class="mb-4">
+                We accept that our dog Kalu may not have survived anywhere.
+            </p>
+            <p class="mb-4">
+                We were ready to fight for him with time, effort, and money, without hesitation.
+            </p>
+            <p class="mb-4">
+                But how a dog is handled, spoken about, and supported while fighting for life matters deeply.
+                Empathy, clear communication, preparedness, and honest guidance matter — especially when a hospital
+                holds a monopoly and pet parents have no alternative.
+            </p>
+            <p class="mb-4">
+                This review is not written in anger. It is written so no other pet parent feels as helpless as we did.
+            </p>
+            <p class="font-semibold">— Parents of our dog Kalu 🐾</p>
+        </div>
+        <div class="mt-6">
+            <img class="rounded-2xl w-full memory-photo" src="kalu_gallery/good%20bye%20image.jpg"
+                alt="Goodbye to Kalu">
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-100 text-center text-sm py-8 mt-12">
+        <p class="mb-1">This website is shared for awareness and reflection.</p>
+        <p class="text-gray-500">
+            It represents the personal experience of Kalu’s family.
+        </p>
+    </footer>
+
+    <button id="backToTop" class="floating-paw button is-warning">
+        <span>🐾</span>
+    </button>
+
+    <script>
+        const progressBar = document.getElementById( 'progressBar' );
+        const backToTop = document.getElementById( 'backToTop' );
+
+        window.addEventListener( 'scroll', () => {
+            const scrolled = window.scrollY;
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = height > 0 ? ( scrolled / height ) * 100 : 0;
+            progressBar.style.width = `${progress}%`;
+        } );
+
+        backToTop.addEventListener( 'click', () => {
+            window.scrollTo( { top: 0, behavior: 'smooth' } );
+        } );
+    </script>
+</body>
+
+</html>
