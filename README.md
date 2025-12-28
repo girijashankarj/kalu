@@ -1,179 +1,116 @@
-# 🐾 Kalu – A Critical Care Experience Every Pet Parent Should Understand
+# 🐾 For Kalu
 
-This repository contains a **static public documentation website** that records the critical care journey of **our dog Kalu** between **13–16 December in Pune**.
+**For Kalu** is a personal, factual, and memorial website documenting the life of a dog named Kalu and the critical-care journey that followed his accident in December 2025.
 
-The purpose of this project is **awareness, transparency, and preparedness** for pet parents — not blame, harassment, or allegations of medical negligence.
-
----
-
-## 📌 Why this repository exists
-
-When a pet is critically injured, families are often forced to make decisions under extreme stress, limited information, and time pressure.
-
-In Pune, access to **advanced 24/7 veterinary critical care** is extremely limited. In emergency situations, pet parents are often directed to **a single option**, leaving them with **no meaningful alternative**.
-
-This repository exists to:
-
-- Document a **real, lived experience** in detail
-- Help pet parents **understand systemic realities before an emergency**
-- Encourage **better questions, preparedness, and expectations**
-- Highlight how **processes, communication, and empathy** matter alongside medical skill
+This repository is not a product, service, or commercial initiative.  
+It is a **public archive** created for remembrance, awareness, and preparedness.
 
 ---
 
-## ⚠️ Important clarification (please read)
+## Purpose
 
-- We **fully accept** that our dog Kalu was in a **critical, life-threatening condition**
-- Survival was **never guaranteed**
-- This project **does not allege medical negligence**
-- This project **does not target individuals**
-- This project **does not seek legal action**
+This project exists to:
 
-We explicitly state that we have **no complaints** about the following doctors:
-- **Dr. Leila Fernandez**
-- **Dr. Phiroz Khambatta**
-- **Dr. Muskan**
+1. **Honor Kalu’s life** — his personality, habits, relationships, and role within our family.
+2. **Document a real critical-care experience** — factually, chronologically, and without exaggeration.
+3. **Help other pet parents prepare** — emotionally and practically — before emergencies remove choice.
 
-The concerns documented here relate to:
-- System preparedness
-- Infrastructure limitations
-- Communication gaps
-- Emotional support
-- Availability dependencies
-- Monopoly-driven constraints in emergency care
+The focus is **life first, tragedy second**.
 
 ---
 
-## 📖 What is documented on the website
+## What This Project Is
 
-The website is structured as a **long-form case record**, covering:
-
-1. **Purpose and scope of sharing**
-2. **The Pune emergency veterinary care context**
-3. **Pre-Raintree journey and lack of alternatives**
-4. **12 December – emergency admission refusal**
-5. **13 December – admission, handling, MRI, consent**
-6. **Night of 13 December – monitoring and communication breakdown**
-7. **14 December – blood and plasma emergency**
-8. **15 December – MRI report delay and external intervention**
-9. **15 December – transfusion decisions and changing plans**
-10. **16 December – final deterioration and goodbye**
-11. **Reflections, learnings, and questions for pet parents**
-
-The intent is to **connect dots**, not to sensationalize events.
+- A **personal memoir** presented in structured, readable form  
+- A **timeline-based documentation** of veterinary emergency care  
+- A **reference archive** for pet parents navigating trauma, ICU systems, and medical decision-making  
+- A **static informational website**, suitable for GitHub Pages  
 
 ---
 
-## 🧱 Technical details
+## What This Project Is NOT
 
-- **Type:** Static website
-- **Hosting:** GitHub Pages
-- **Stack:**  
-  - HTML5  
-  - Tailwind CSS (via CDN)  
-  - Bulma (via CDN)  
-  - Font Awesome (via CDN)  
-  - Lottie (via CDN)  
-- **No backend**
-- **No analytics**
-- **No dynamic scripts**
-- **Mobile-friendly**
-- **Fast loading**
+- ❌ Not a call for boycott or retaliation  
+- ❌ Not a medical claim or clinical verdict  
+- ❌ Not defamation or an accusation of intent  
+- ❌ Not a replacement for professional veterinary advice  
 
-This ensures:
-- Long-term availability
-- No dependency on servers
-- No manipulation of content after publishing
+All medical events are described **from the perspective of lived experience**, not as expert diagnosis.
 
 ---
 
-## 📂 Repository structure
+## Scope of Content
 
-/
-├── index.html # Complete static website
-├── kalu_gallery/ # Photos used on the page
-└── README.md # This file
+The website includes:
 
+- Kalu’s origin and early life (2016)
+- His bond with family members
+- Behavioral traits, habits, language recognition
+- Major life phases (college years, COVID, marriage, relocation)
+- The accident on 11 December 2025
+- Emergency treatment and ICU journey (11–16 December 2025)
+- Systemic challenges encountered during critical care
+- Aftermath, grief, and rationale for public documentation
 
-Only `index.html` is required to run the site.
-
----
-
-## 🚀 How to view the website
-
-### Option 1: GitHub Pages (recommended)
-
-1. Go to **Repository → Settings → Pages**
-2. Source: `main` branch
-3. Folder: `/root`
-4. Save
-5. Access via the GitHub Pages URL provided
-
-If you already enabled Pages, add your live link here:
-- **GitHub Pages URL:** `<your-pages-url-here>`
-
-### Option 2: Local view
-
-Simply open `index.html` in any modern browser.
+All content is arranged **chronologically** and **contextually**, not emotionally sensationalized.
 
 ---
 
-## 🖼️ Image hosting on GitHub Pages
+## Ethical Position
 
-All images live in `kalu_gallery` and are referenced with **URL-encoded filenames** (spaces become `%20`).
-To keep images loading correctly:
+We accept that Kalu may not have survived regardless of location.
 
-- Do not rename image files after publishing unless you update `index.html`
-- Keep letter case the same (GitHub Pages is case-sensitive)
-- Use the relative paths in the repo (no external hosting required)
+The concern documented here is **not outcome**, but:
+- communication
+- preparedness
+- empathy
+- systemic bottlenecks in emergency veterinary care
+
+Silence protects systems.  
+Transparency protects people.
 
 ---
 
-## 👥 Intended audience
+## Audience
 
-This documentation is intended for:
-
+This project is written for:
 - Pet parents
-- Animal welfare groups
-- NGOs
-- Veterinary professionals (for reflection)
-- Policy and ecosystem discussions
-- Media (contextual understanding)
-
-It is **not intended for harassment, trolling, or online abuse**.
+- Animal caregivers
+- Veterinary professionals willing to reflect
+- Anyone navigating grief after sudden loss
 
 ---
 
-## 🧠 How to read this responsibly
+## Technical Notes
 
-- Read with context, not assumptions
-- Understand that this reflects **one family’s experience**
-- Focus on **systemic patterns**, not individual blame
-- Use it to ask **better questions before emergencies**
+- This is a **static site** (HTML / CSS)
+- No dynamic data collection
+- No monetization
+- No ads
+- No tracking
+
+Primary content source:
+- `content/data/part*.txt` (ordered by filename)
 
 ---
 
-## 🕊️ In memory
+## Local Preview
 
-Kalu was not just a pet.  
+- Open `index.html` in a browser
+
+---
+
+## GitHub Pages
+
+- Live URL: (add after publish)
+
+---
+
+## Final Note
+
+Kalu was not a case.  
+He was not a patient.
+
 He was family.
 
-This repository exists because love demands honesty — even when it is painful.
-
-If sharing this helps even **one pet parent** feel more prepared, then it has served its purpose.
-
----
-
-## 📜 License & usage
-
-This content is shared for **public awareness**.
-
-- You may **read and share links**
-- You may **reference for discussion or education**
-- You may **not alter or misrepresent the content**
-- You may **not use it for harassment or defamation**
-
----
-
-**In memory of Kalu 🐾**  
-Loved. Fought for. Never forgotten.
+**— For Kalu 🐾**

@@ -2,559 +2,2066 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalu Life</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>" />
 
-    <title>Kalu 🐾 | Critical care experience (13–16 December)</title>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
-    <!-- Emoji favicon -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Quicksand:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+  <!-- Bulma CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Bulma CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Twemoji (emoji rendering) -->
+  <script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js"></script>
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- Lottie Player -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#111827',
-                        muted: '#6b7280',
-                        danger: '#b91c1c'
-                    }
-                }
-            }
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#1f232b",
+            soft: "#4a5568",
+            sand: "#f4efe8",
+            stone: "#cbbfad",
+            ember: "#b46a3c",
+            sea: "#2c5c6b",
+            moss: "#3c6b4d"
+          },
+          fontFamily: {
+            serif: ["Fraunces", "serif"],
+            sans: ["IBM Plex Sans", "sans-serif"]
+          }
         }
-    </script>
+      }
+    };
+  </script>
 
-    <style>
-        :root {
-            --ink: #1f2937;
-            --ash: #5b6472;
-            --moon: #e3e7ef;
-            --mist: #f6f7fb;
-            --ember: #b45309;
-            --stone: #111827;
-        }
+  <style>
+    :root {
+      --ink: #1f232b;
+      --paper: #f9f6f1;
+      --sand: #f4efe8;
+      --ember: #b46a3c;
+      --sea: #2c5c6b;
+      --shadow: rgba(18, 20, 24, 0.12);
+    }
 
-        body {
-            font-family: 'Quicksand', sans-serif;
-            color: var(--ink);
-            background: radial-gradient(circle at top, #ffffff 0%, #f2f3f7 45%, #e7ebf2 100%);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        h1,
-        h2,
-        h3 {
-            font-family: 'Fraunces', serif;
-        }
+    body {
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--ink);
+      background-image: radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 45%),
+        radial-gradient(circle at 80% 10%, rgba(244, 239, 232, 0.9) 0%, rgba(244, 239, 232, 0) 55%),
+        linear-gradient(180deg, #fdfbf8 0%, #f3ede4 45%, #eee5da 100%);
+      background-attachment: fixed;
+    }
 
-        .glass {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-            backdrop-filter: blur(10px);
-        }
+    a {
+      color: var(--sea);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
 
-        .memorial-card {
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-        }
+    a:hover {
+      color: var(--ember);
+    }
 
-        .progress-track {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 6px;
-            width: 100%;
-            z-index: 50;
-            background: rgba(255, 255, 255, 0.7);
-        }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #f1b24b;
+      outline-offset: 3px;
+      border-radius: 999px;
+    }
 
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #334155, #b45309);
-        }
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      transform: translateY(-200%);
+      background: #1f232b;
+      color: #fff7ed;
+      padding: 0.5rem 0.9rem;
+      border-radius: 999px;
+      z-index: 60;
+      font-size: 0.85rem;
+    }
 
-        .floating-paw {
-            position: fixed;
-            right: 18px;
-            bottom: 18px;
-            z-index: 40;
-            animation: float 5s ease-in-out infinite;
-        }
+    .skip-link:focus {
+      transform: translateY(0);
+    }
 
-        .memory-photo {
-            filter: grayscale(100%);
-        }
+    .nav-links a,
+    .button,
+    .tag a {
+      text-decoration: none;
+    }
 
-        .gallery-img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    .toc-links a {
+      display: inline-block;
+      padding: 2px 0;
+    }
 
-        .ig-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 12px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+    .toc-links a::after {
+      content: " ↗";
+      font-size: 0.85em;
+      color: var(--ember);
+    }
 
-        .ig-pill a {
-            color: #ffffff;
-            text-decoration: underline;
-        }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Fraunces", serif;
+      letter-spacing: 0.01em;
+    }
 
-        @keyframes float {
+    .glass {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(31, 35, 43, 0.1);
+    }
 
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fffefb 0%, #f2e8dc 100%);
+      box-shadow: 0 24px 48px var(--shadow);
+    }
 
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-    </style>
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(180, 106, 60, 0.18), rgba(180, 106, 60, 0));
+      pointer-events: none;
+    }
+
+    .hero-panel h2 {
+      font-size: clamp(2.8rem, 4.2vw, 3.6rem);
+      letter-spacing: 0.01em;
+    }
+
+    .hero-columns {
+      align-items: stretch;
+    }
+
+    .hero-image {
+      height: 100%;
+    }
+
+    .hero-image img {
+      height: 100%;
+    }
+
+    .timeline-line {
+      border-left: 2px dashed rgba(31, 35, 43, 0.3);
+    }
+
+    .timeline-dot::before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 14px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--ember);
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px rgba(31, 35, 43, 0.12);
+    }
+
+    .timeline-line .box {
+      background: #fffaf4;
+      border: 1px solid rgba(31, 35, 43, 0.08);
+    }
+
+    .section-card {
+      position: relative;
+      padding: 2.2rem;
+      border: 1px solid rgba(31, 35, 43, 0.08);
+      box-shadow: 0 16px 40px var(--shadow);
+      background: #fffdf9;
+    }
+
+    .section-card:not(.hero-panel)::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(180, 106, 60, 0.55), rgba(44, 92, 107, 0.35));
+    }
+
+    .section-card p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .section-card p+p {
+      margin-top: 1rem;
+    }
+
+    .section-card>h2 {
+      font-size: 2.3rem;
+      letter-spacing: 0.02em;
+    }
+
+    .chapter-title {
+      position: relative;
+      padding-top: 1.25rem;
+    }
+
+    .chapter-title::before {
+      content: attr(data-chapter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(31, 35, 43, 0.55);
+    }
+
+    .section-card>h2+h3 {
+      margin-top: 1rem;
+    }
+
+    figure img {
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .image-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+      padding: 1rem;
+      text-align: center;
+      color: #6b7280;
+      background: #f3f4f6;
+      border: 1px dashed #d1d5db;
+    }
+
+    .status-pill {
+      letter-spacing: 0.08em;
+    }
+
+    .progress-track {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      width: 100%;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #334155, #b46a3c);
+    }
+
+    .gallery img {
+      aspect-ratio: 3 / 4;
+      height: auto;
+      object-fit: cover;
+      filter: grayscale(8%);
+    }
+
+    .gallery h3 {
+      margin-top: 2.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgba(180, 106, 60, 0.2);
+    }
+
+    .lead-copy {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .lead-copy::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.3rem;
+      width: 3px;
+      height: 1.6rem;
+      background: var(--ember);
+      border-radius: 999px;
+    }
+
+    .quote-card {
+      background: #2c2b28;
+      color: #f9f5ee;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(18, 20, 24, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-card::before {
+      content: "“";
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-size: 6rem;
+      color: rgba(244, 239, 232, 0.2);
+    }
+
+    .quote-text {
+      font-size: 1.4rem;
+      font-family: "Fraunces", serif;
+      line-height: 1.6;
+    }
+
+    .quote-source {
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(244, 239, 232, 0.7);
+    }
+
+    section[id] {
+      scroll-margin-top: 120px;
+    }
+
+    .box p+h3,
+    .box p+h2 {
+      margin-top: 1.5rem;
+    }
+
+    .modal {
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.28s ease-in-out, transform 0.28s ease-in-out;
+    }
+
+    .modal.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 1024px) {
+      .toc-links ul {
+        columns: 2;
+        column-gap: 2.5rem;
+      }
+    }
+  </style>
 </head>
 
-<body class="leading-relaxed">
-    <div class="progress-track">
-        <div id="progressBar" class="progress-bar"></div>
+<body class="text-ink">
+  <a class="skip-link" href="#top">Skip to content</a>
+  <div class="progress-track">
+    <div id="progressBar" class="progress-bar"></div>
+  </div>
+
+  <header class="glass sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="text-sm uppercase tracking-[0.3em] text-gray-500">For Kalu</p>
+        <!-- <h1 class="text-2xl font-semibold">Kalu was a small brother to us.</h1> -->
+      </div>
+      <nav class="flex flex-wrap gap-2 text-sm" aria-label="Primary">
+        <a class="button is-light is-small" href="#top">Top</a>
+        <a class="button is-light is-small" href="#toc">Contents</a>
+        <a class="button is-light is-small" href="#life">Life</a>
+        <a class="button is-light is-small" href="#character">Character</a>
+        <a class="button is-light is-small" href="#accident">Accident</a>
+        <a class="button is-light is-small" href="#icu">ICU Timeline</a>
+        <a class="button is-light is-small" href="#aftermath">Aftermath</a>
+        <a class="button is-light is-small" href="#learnings">Learnings</a>
+        <a class="button is-light is-small" href="./kalu-memories.html">Memories</a>
+        <a class="button is-dark is-small" href="#memory">
+          <span class="icon"><i class="fa-solid fa-heart"></i></span>
+          <span>In Memory</span>
+        </a>
+      </nav>
     </div>
+  </header>
 
-    <!-- ================= NAV ================= -->
-    <nav class="glass sticky top-0 z-40">
-        <div class="max-w-6xl mx-auto px-6 py-3 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-                <span class="text-2xl">🐾</span>
-                <div>
-                    <p class="font-semibold text-lg">Kalu’s Loss</p>
-                    <p class="text-xs text-gray-500">A memorial and full account</p>
+  <main id="top" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="space-y-12">
+      <section class="hero-panel rounded-3xl p-10 section-card">
+        <div class="columns is-multiline hero-columns">
+          <div class="column is-12-tablet is-7-desktop">
+            <p class="text-sm uppercase tracking-[0.3em] text-gray-500">In loving memory</p>
+            <p class="mt-2">
+              <span class="tag is-link is-light">
+                <span class="icon"><i class="fa-brands fa-instagram"></i></span>
+                <a href="https://instagram.com/kalu_bow_wow" target="_blank" rel="noreferrer">@kalu_bow_wow</a>
+              </span>
+            </p>
+            <h2 class="text-4xl md:text-5xl font-semibold mt-2">Kalu</h2>
+            <p class="text-lg text-sea font-medium mt-2">Kalu was a small brother to us.</p>
+            <div class="mt-4">
+              <div class="columns is-multiline is-mobile">
+                <div class="column is-12-mobile is-4-tablet">
+                  <div class="box has-text-centered">
+                    <p class="is-size-7 uppercase tracking-widest text-gray-500">Birthdate</p>
+                    <p class="is-size-5 has-text-weight-semibold">26 Nov 2016</p>
+                    <p class="is-size-7 text-gray-500"></p>
+                  </div>
                 </div>
-            </div>
-            <div class="flex flex-wrap gap-2 text-sm">
-                <a href="#overview" class="button is-light is-small">Overview</a>
-                <a href="#life" class="button is-light is-small">Kalu’s Life</a>
-                <a href="#accident" class="button is-light is-small">Accident</a>
-                <a href="#hospital" class="button is-light is-small">Hospital Days</a>
-                <a href="#issues" class="button is-light is-small">Issues</a>
-                <a href="#gallery" class="button is-light is-small">Gallery</a>
-                <a href="#closing" class="button is-light is-small">Final Words</a>
-            </div>
-            <div class="flex items-center gap-2">
-                <a href="#closing" class="button is-dark is-small">
-                    <i class="fa-solid fa-heart"></i>
-                    <span class="ml-2">In memory</span>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ================= HERO ================= -->
-    <section class="px-6 py-16">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-            <div>
-                <p class="text-sm uppercase tracking-widest text-gray-500">In loving memory</p>
-                <p class="mt-3">
-                    <span class="ig-pill">
-                        <i class="fa-brands fa-instagram"></i>
-                        <a href="https://instagram.com/kalu_bow_wow" target="_blank" rel="noreferrer">@kalu_bow_wow</a>
-                    </span>
-                </p>
-                <h1 class="text-4xl md:text-5xl font-bold mt-3 mb-4">Our Dog Kalu 🐾</h1>
-                <p class="text-lg text-gray-700 mb-6">
-                    Critical care experience with our dog Kalu (13–16 December).
-                    This page is a full account shared for awareness and preparedness.
-                </p>
-                <div class="flex flex-wrap gap-3">
-                    <a href="#hospital" class="button is-dark is-medium">
-                        <i class="fa-solid fa-book-open"></i>
-                        <span class="ml-2">Read the hospital days</span>
-                    </a>
-                    <a href="#issues" class="button is-warning is-medium">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span class="ml-2">Key concerns</span>
-                    </a>
+                <div class="column is-12-mobile is-4-tablet">
+                  <div class="box has-text-centered">
+                    <p class="is-size-7 uppercase tracking-widest text-gray-500">Lived</p>
+                    <p class="is-size-5 has-text-weight-semibold">9 years</p>
+                  </div>
                 </div>
-            </div>
-            <div class="glass rounded-2xl p-6">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <p class="text-sm font-semibold text-gray-500">A companion, a fighter</p>
-                        <h2 class="text-2xl font-bold">Kalu’s Journey</h2>
-                    </div>
-                    <span class="text-3xl">🕯️</span>
+                <div class="column is-12-mobile is-4-tablet">
+                  <div class="box has-text-centered">
+                    <p class="is-size-7 uppercase tracking-widest text-gray-500">Last Day</p>
+                    <p class="is-size-5 has-text-weight-semibold">16 Dec 2025</p>
+                  </div>
                 </div>
-                <div class="mt-5">
-                    <img class="rounded-xl w-full" src="kalu_gallery/banner%20image.jpg" alt="Kalu banner image">
-                </div>
-                <div class="mt-4 flex items-center gap-4 text-sm text-gray-600">
-                    <i class="fa-solid fa-location-dot text-amber-600"></i>
-                    <span>Pune • 11–16 December</span>
-                </div>
-                <div class="mt-4">
-                    <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_5ngs2ksb.json"
-                        background="transparent" speed="1" style="width: 140px; height: 140px;" loop autoplay>
-                    </lottie-player>
-                </div>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ================= OVERVIEW ================= -->
-    <section id="overview" class="max-w-5xl mx-auto px-6 py-12">
-        <h2 class="text-2xl font-bold mb-4">Critical care experience with our dog Kalu (13–16 December)</h2>
-        <div class="p-6 bg-white rounded-2xl memorial-card">
-            <h3 class="text-lg font-semibold mb-2">Important note upfront</h3>
-            <p class="mb-3">
-                We have no complaints about the main doctors — Dr. Leila Fernandez, Dr. Phiroz Khambatta, and Dr.
-                Muskan.
-                Our concerns are about systems, processes, empathy, communication, availability, and monopoly-driven
-                gaps,
-                not about intent to treat.
+            <p class="mt-4 text-lg lead-copy">
+              This biography is a record of Kalu's life, the bond we shared with him, and the critical-care
+              journey that followed his accident in December 2025.
             </p>
-            <p class="text-sm text-gray-600">
-                This review is not written in anger. It is written so other pet parents can connect the dots before an
-                emergency, not after.
+            <p class="mt-4 text-lg lead-copy">
+              <strong>For Kalu</strong> is a personal, factual, and memorial record. It is a public archive
+              created for remembrance, awareness, and preparedness.
             </p>
-        </div>
-    </section>
-
-    <!-- ================= TIMELINE INDEX ================= -->
-    <section id="timeline-index" class="max-w-5xl mx-auto px-6 py-6">
-        <div class="p-5 bg-white rounded-2xl memorial-card">
-            <h3 class="text-lg font-semibold mb-3">Page index</h3>
-            <div class="flex flex-wrap gap-3 text-sm">
-                <a href="#life" class="button is-light is-small">Life (2016–2025)</a>
-                <a href="#accident" class="button is-light is-small">Accident & early response (11–12 Dec)</a>
-                <a href="#hospital" class="button is-light is-small">Hospital days (13–16 Dec)</a>
-                <a href="#issues" class="button is-light is-small">Issues to know</a>
-                <a href="#gallery" class="button is-light is-small">Photos</a>
-                <a href="#closing" class="button is-light is-small">Final words</a>
+            <p class="mt-4 text-lg lead-copy">
+              Kalu lived fully, curious, protective, intelligent, and deeply aware of his surroundings. In
+              December 2025, an accident changed everything. What follows is written as a factual record,
+              so other pet parents can prepare better.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#life" class="button is-dark is-medium">
+                <span class="icon"><i class="fa-solid fa-book"></i></span>
+                <span>Start the Life Story</span>
+              </a>
+              <a href="#icu" class="button is-warning is-medium">
+                <span class="icon"><i class="fa-solid fa-clock"></i></span>
+                <span>Jump to ICU Timeline</span>
+              </a>
             </div>
+          </div>
+          <div class="column is-12-tablet is-5-desktop is-flex">
+            <figure class="image hero-image w-full">
+              <img loading="eager" fetchpriority="high" decoding="async" class="rounded-2xl object-cover object-left w-full h-full"
+                src="kalu_gallery/hero/banner-portrait.jpg" alt="My banner portrait." />
+            </figure>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- ================= KALU'S LIFE ================= -->
-    <section id="life" class="max-w-5xl mx-auto px-6 py-12">
-        <h2 class="text-2xl font-bold mb-4">Kalu’s life with us</h2>
-        <div class="p-6 bg-white rounded-2xl memorial-card space-y-4">
-            <p>
-                Kalu, our indie dog, looked like a Border Collie and found us on 26 Nov 2016 on the road near our house.
-            </p>
-            <p>
-                He was a charming, smart boy — always understanding, never troubled, never broke anything. He understood
-                more than 40–50 Marathi words and was closely attached to our family.
-            </p>
-            <p>
-                We never chained him because we had a big flat and a big garden space behind. He never asked for dog
-                food.
-                He liked milk, bread, and chicken tandoor on weekends, and recently started enjoying Drools and
-                Choco-cos,
-                but he was never demanding.
-            </p>
-            <p>
-                We went through many difficult situations at home, including financial issues — he was always emotional
-                support and truly a family member.
-            </p>
-            <p>
-                We never liked bikes or mopeds, but recently he started enjoying car rides. He was ready whenever we
-                took
-                car keys for office, and we used to give him small rides or take him to multiple places.
-            </p>
-            <p>
-                It felt like he started enjoying freedom due to our new car and the stability we recently got.
-            </p>
-            <p>
-                He recently celebrated his 9th birthday on 26 Nov at Ladghar Beach. It was my dad’s wish to take him to
-                the beach; even though he was scared of water (even for bath), he enjoyed the beach and the vibes.
-            </p>
-            <p class="font-semibold">
-                But the day of the accident came on 11 Dec.
-            </p>
-            <p>
-                As usual we left him for walk as daily routine — he goes, takes his walk and comes back. But this day
-                was
-                different. I received a call from a friend about his accident by drunk drivers on two wheelers. They
-                flew away.
-                We took Kalu to Petozone, then Vetic Kalyani Nagar, then Raintree, Ghorpadi.
-            </p>
-            <div class="pt-2">
-                <h3 class="text-lg font-semibold mb-2">Key dates</h3>
-                <ul class="list-disc pl-6 text-sm text-gray-700 space-y-1">
-                    <li>26 Nov 2016: Kalu found us near our house.</li>
-                    <li>26 Nov 2025: 9th birthday at Ladghar Beach.</li>
-                    <li>11 Dec: Accident day.</li>
-                    <li>12 Dec: Emergency admission refused due to anniversary event.</li>
-                    <li>13–16 Dec: Hospital days and critical care.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= ACCIDENT ================= -->
-    <section id="accident" class="max-w-5xl mx-auto px-6 py-12">
-        <h2 class="text-2xl font-bold mb-4">Accident and early response</h2>
-        <div class="p-6 bg-white rounded-2xl memorial-card space-y-4 text-sm text-gray-700">
-            <p>
-                Kalu had no external wounds, but major internal injuries involving the head, neck, left eye, spinal
-                cord,
-                lungs, liver, kidneys, bladder, and internal bleeding. We fully accept his condition was critical and
-                life-threatening.
-            </p>
-            <p>
-                On 11 December, a friend called us about his accident. It was caused by drunk drivers on two wheelers
-                who fled the spot.
-            </p>
-            <p>
-                Initial stabilization was done at Petozone Clinic, Pimple Saudagar, and we were advised to move to a
-                24/7
-                advanced hospital.
-            </p>
-            <p>
-                Crown Vet, Aundh, did not even come out to see our dog. Only a watchman interacted with us as a
-                mediator.
-            </p>
-            <p>
-                Multiple vets told us Raintree is the only place in Pune with advanced facilities like MRI and 24/7 ICU.
-                We reached Raintree because there was no real choice.
-            </p>
-            <p>
-                Our dog was admitted to Vetic, Kalyani Nagar for two days (11–12 December). They did immediate treatment
-                like X-ray and blood tests. We saw some improvement, but they did not have next-level treatment like
-                lung
-                fluid removal and MRI. We had to sleep in the car and barely got 2–3 hours of rest.
-                The doctors there were empathic, explained things in normal words, and kept continued monitoring by
-                one person near our dog.
-            </p>
-            <p>
-                On 12 December, we personally approached Raintree for emergency admission. First we were told there was
-                no occupancy. Later, we were refused due to their annual anniversary event. This was the first major red
-                flag.
-            </p>
-        </div>
-        <div class="mt-6">
-            <img class="rounded-2xl w-full" src="kalu_gallery/hospital%20cirital%20image.jpg"
-                alt="Kalu during hospital care">
-        </div>
-    </section>
-
-    <!-- ================= HOSPITAL DAYS ================= -->
-    <section id="hospital" class="max-w-5xl mx-auto px-6 py-12 space-y-6">
-        <div class="p-6 bg-white rounded-2xl memorial-card">
-            <h2 class="text-2xl font-bold mb-4">Day 1 – 13 December (Admission & MRI)</h2>
-            <h3 class="text-lg font-semibold mb-2">Admission & handling</h3>
-            <p>Our dog Kalu was admitted on 13 December at Raintree.</p>
-            <p>Despite neck and spinal injuries, no stretcher was used. He was lifted by hand, which risked further
-                damage.</p>
-            <h3 class="text-lg font-semibold mt-4 mb-2">MRI & anesthesia</h3>
-            <p>MRI urgency was not taken up immediately. It happened only after repeated follow-ups and when the
-                anesthesia expert was available.</p>
-            <p>The MRI was scheduled after around 3:30 PM because the anesthesia expert was available only then.</p>
-            <p>Consent for anesthesia was taken on the spot, without proper prior explanation.</p>
-            <p>We were informed after sedation that there was no guarantee Kalu would survive anesthesia.</p>
-            <p>MRI and anesthesia were handled by Dr. Muskan.</p>
-            <p>Raintree used a nearby MRI center within about 1 km of the hospital.</p>
-            <p>After reversal, Kalu responded to us, lifted his ears, opened his eyes, and tried to stand. We felt hope.
-            </p>
-            <h3 class="text-lg font-semibold mt-4 mb-2">After MRI</h3>
-            <p>We agreed to every test, without thinking about money.</p>
-            <p>We were told Kalu may never walk again, and we accepted full responsibility for lifelong care.</p>
-            <p>Tick fever tests were sent outside Pune.</p>
-        </div>
-
-        <div class="p-6 bg-white rounded-2xl memorial-card">
-            <h2 class="text-2xl font-bold mb-4">Night of 13 December – Serious trust-breaking moment</h2>
-            <p>We left around 10:00 PM after seeing Kalu responsive and alert.</p>
-            <p>At 10:45 PM, we received a call saying his condition was not good.</p>
-            <p>We offered to come immediately, but we were told we are not allowed to see him due to visiting-hour
-                rules.</p>
-            <p>Later that night, we were told Kalu was stable.</p>
-            <p>During the same phone call, we clearly heard shouting, alarms, and staff arguing about monitoring
-                equipment not being attached to a dog.</p>
-            <p>The call ended suddenly.</p>
-            <p>We recorded the call because we were becoming suspicious about the handling.</p>
-            <p>Later, we were told it was “some other dog”.</p>
-            <p>At 12:05 AM our calls were not picked. When they finally responded, they said our dog was okay.</p>
-            <p>As dog parents, hearing this while our own dog was critical was terrifying and disturbing.</p>
-            <p>We still do not know which dog it was or what happened.</p>
-        </div>
-
-        <div class="p-6 bg-white rounded-2xl memorial-card">
-            <h2 class="text-2xl font-bold mb-4">Day 2 – 14 December (Blood & plasma crisis)</h2>
-            <h3 class="text-lg font-semibold mb-2">Communication & empathy</h3>
-            <p>Most explanations were given in technical medical language.</p>
-            <p>Only when Dr. Leila Fernandez explained in simple words did we clearly understand Kalu’s condition.</p>
-            <p>The assigned vet Anushree showed no empathy, no emotional support, and constant negativity.</p>
-            <p>In Marathi: “चेहऱ्यावरची माशी पण उडत नव्हती.”</p>
-            <p>We were told we could move Kalu elsewhere, but he was not in a condition to travel long distance.</p>
-            <h3 class="text-lg font-semibold mt-4 mb-2">Plasma emergency</h3>
-            <p>Kalu urgently required fresh plasma due to clotting issues.</p>
-            <p>Raintree had no plasma separation centrifuge and no blood bank support.</p>
-            <p>We were told to arrange donor dogs ourselves with strict criteria.</p>
-            <p>Criteria: vaccinated, 25 kg+, no history of tick fever, and no antibiotics or ongoing medication.</p>
-            <p>We contacted NGOs, friends, Instagram, WhatsApp, and Facebook groups.</p>
-            <p>Lady X, a complete stranger, came from far with her dog purely out of kindness.</p>
-            <p>Even then, sampling was delayed and cross-matching was pushed to the next morning due to lab
-                availability.</p>
-            <p>We asked the hospital to share a donor post on their page; it was posted only after a delay.</p>
-            <p>This was emotionally and physically draining for a family already breaking down.</p>
-        </div>
-
-        <div class="p-6 bg-white rounded-2xl memorial-card">
-            <h2 class="text-2xl font-bold mb-4">Day 3 – 15 December (MRI report delay & transfusion)</h2>
-            <h3 class="text-lg font-semibold mb-2">MRI report delay</h3>
-            <p>MRI report was not shared because the neurologist was unavailable.</p>
-            <p>Only after Tata Small Animals Hospital, Mumbai, contacted the same doctor on our behalf did the report
-                arrive.</p>
-            <p>Until then, information was unclear and incomplete.</p>
-            <p>Reports on the Vet Buddy portal were also delayed; we had to request uploads repeatedly.</p>
-            <p>This made us feel that external pressure was needed to receive basic medical clarity.</p>
-            <h3 class="text-lg font-semibold mt-4 mb-2">Blood transfusion</h3>
-            <p>Plasma separation failed due to lack of equipment.</p>
-            <p>Lady X’s dog was kept fasting (food for 4 hours, water for 2 hours) before blood extraction.</p>
-            <p>The collected blood was kept for natural plasma separation, but it did not work in time.</p>
-            <p>We searched for a centrifuge option; Dr. Khambta said it could work, but time was running out.</p>
-            <p>The plan changed to direct blood transfusion.</p>
-            <p>We were told Kalu had liver and kidney issues, bladder urine was red due to internal injuries, and his
-                paws were swelling.</p>
-            <p>We had arranged nearly 10 dogs; some didn’t match, some didn’t fit weight criteria.</p>
-            <p>Some people offered to send blood samples through porter and dunzo with ice packs.</p>
-            <p>Transfusion was stopped midway as Kalu’s temperature increased.</p>
-            <p>We were told it would take 4 hours, and they would stop if his temperature rose. It was stopped after
-                about 30 minutes.</p>
-        </div>
-
-        <div class="p-6 bg-white rounded-2xl memorial-card">
-            <h2 class="text-2xl font-bold mb-4">Day 4 – 16 December (Kalu passed away)</h2>
-            <p>Kalu stopped breathing around 12 PM.</p>
-            <p>CPR was attempted.</p>
-            <p>Even after clear signs that he was gone, manual air pumping continued, which was extremely distressing to
-                witness as pet parents.</p>
-            <p>We asked them to stop the air pumping. The balloon-like tube was removed later, but other monitoring
-                equipment was not removed immediately.</p>
-            <p>We had been asked for daily advance payments of 25k; the bill was always above that amount.</p>
-            <p>We cleared all bills without any argument.</p>
-            <p>We took Kalu for cremation near Naidu Hospital, Sangamwadi, called his loved ones, performed our rituals,
-                and said our final goodbye.</p>
-        </div>
-    </section>
-
-    <!-- ================= ISSUES ================= -->
-    <section id="issues" class="max-w-5xl mx-auto px-6 py-12">
-        <h2 class="text-2xl font-bold mb-4">⚠️ Important issues pet parents should know</h2>
-        <ul class="list-disc pl-6 space-y-2 text-sm text-gray-700 bg-white rounded-2xl p-6 memorial-card">
-            <li>Monopoly in Pune for advanced 24/7 veterinary care</li>
-            <li>Emergency admission refused due to anniversary event</li>
-            <li>Anniversary party at the same location while emergency admission was refused</li>
-            <li>Lack of empathy and emotional support during critical care</li>
-            <li>Unsafe handling of accident dog (no stretcher used)</li>
-            <li>Delays driven by staff availability, not medical urgency</li>
-            <li>Poor night-time monitoring communication</li>
-            <li>No in-house plasma separation or blood bank support</li>
-            <li>Pet parents forced to arrange donor dogs themselves</li>
-            <li>MRI report delayed due to doctor unavailability</li>
-            <li>Multiple dogs kept together in one ICU room</li>
-            <li>Strict visiting hours even during deterioration</li>
-            <li>Heavy use of technical jargon, poor simple explanations</li>
-            <li>Reports on Vet Buddy were delayed despite repeated requests</li>
-            <li>Advance payment taken daily without guidance on insurance</li>
-            <li>Emergency lab testing not available in the evening</li>
-        </ul>
-    </section>
-
-    <!-- ================= GALLERY ================= -->
-    <section id="gallery" class="max-w-6xl mx-auto px-6 py-12">
-        <h2 class="text-2xl font-bold mb-6">Kalu’s photos</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img class="rounded-xl gallery-img" src="kalu_gallery/play%20mode.jpg" alt="Kalu in play mode">
-            <img class="rounded-xl gallery-img" src="kalu_gallery/cozy%20mode.jpg" alt="Kalu in cozy mode">
-            <img class="rounded-xl gallery-img" src="kalu_gallery/watching%20tv.jpg" alt="Kalu watching TV">
-            <img class="rounded-xl gallery-img" src="kalu_gallery/sleep%20mode.jpg" alt="Kalu resting">
-            <img class="rounded-xl gallery-img" src="kalu_gallery/garden.jpg" alt="Kalu in the garden">
-            <img class="rounded-xl gallery-img" src="kalu_gallery/enjoying%20festive.jpg"
-                alt="Kalu enjoying festive time">
-            <img class="rounded-xl gallery-img" src="kalu_gallery/enjoying%20bed.jpg" alt="Kalu enjoying bed">
-            <img class="rounded-xl gallery-img" src="kalu_gallery/waiting%20mode.jpg" alt="Kalu waiting">
-        </div>
-    </section>
-
-    <!-- ================= CLOSING ================= -->
-    <section id="closing" class="max-w-5xl mx-auto px-6 py-12">
-        <div class="p-6 bg-white rounded-2xl memorial-card">
-            <h2 class="text-2xl font-bold mb-4">Final words for pet parents</h2>
-            <p class="mb-4">
-                We accept that our dog Kalu may not have survived anywhere.
-            </p>
-            <p class="mb-4">
-                We were ready to fight for him with time, effort, and money, without hesitation.
-            </p>
-            <p class="mb-4">
-                But how a dog is handled, spoken about, and supported while fighting for life matters deeply.
-                Empathy, clear communication, preparedness, and honest guidance matter — especially when a hospital
-                holds a monopoly and pet parents have no alternative.
-            </p>
-            <p class="mb-4">
-                This review is not written in anger. It is written so no other pet parent feels as helpless as we did.
-            </p>
-            <p class="font-semibold">— Parents of our dog Kalu 🐾</p>
-        </div>
-        <div class="mt-6">
-            <img class="rounded-2xl w-full memory-photo" src="kalu_gallery/good%20bye%20image.jpg"
-                alt="Goodbye to Kalu">
-        </div>
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="bg-gray-100 text-center text-sm py-8 mt-12">
-        <p class="mb-1">This website is shared for awareness and reflection.</p>
-        <p class="text-gray-500">
-            It represents the personal experience of Kalu’s family.
+      <section id="intent" class="box section-card">
+        <h2 class="title is-4">Intent, Scope, and Ethical Position</h2>
+        <p>
+          This record is not written to harass individuals or make allegations. It focuses on systems,
+          communication, preparedness, and what pet parents should know before emergencies. Where facts
+          are disputed, we present Our Account, Clinic Response, and Our Clarification separately.
         </p>
-    </footer>
+        <p class="mt-3">
+          Kalu was in a critical, life-threatening condition; survival was not guaranteed. We accept that
+          he may not have survived regardless of location. The concern documented here is not outcome, but
+          communication, preparedness, empathy, and systemic bottlenecks in emergency veterinary care.
+        </p>
+        <p class="mt-3">
+          This is not a call for boycott or retaliation. Not a medical claim or clinical verdict. Not
+          defamation or an accusation of intent. Not a replacement for professional veterinary advice. All
+          medical events are described from the perspective of lived experience, not as expert diagnosis.
+        </p>
+        <p class="mt-3">Kalu was family. Loved. Fought for. Never forgotten.</p>
+      </section>
 
-    <button id="backToTop" class="floating-paw button is-warning">
-        <span>🐾</span>
-    </button>
+      <section id="toc" class="box section-card">
+        <h2 class="title is-4">Table of Contents</h2>
+        <div class="content toc-links">
+          <ul>
+            <li><a href="#intent">Intent, Scope, and Ethical Position</a></li>
+            <li><a href="#life">Before He Had a Name [Nov 2016]</a></li>
+            <li><a href="#learning">Learning to Live With Each Other [2016-2017]</a></li>
+            <li><a href="#after-pillar">After One Pillar Left, and Life Did Not Stop [2017-2019]</a></li>
+            <li><a href="#covid">When the World Stopped, and Time Came Back [2019-2022]</a></li>
+            <li><a href="#family-changed">When Family Changed Shape [2022-Early 2025]</a></li>
+            <li><a href="#character">Who Kalu Truly Was [2016-2025]</a></li>
+            <li><a href="#accident">The Night Everything Broke [11 Dec 2025]</a></li>
+            <li><a href="#icu">Accident & Critical Care Timeline [12-16 Dec 2025]</a></li>
+            <li><a href="#aftermath">What Stayed, What Broke, and Why This Exists [16 Dec 2025]</a></li>
+            <li><a href="#gallery">Life Gallery Timeline</a></li>
+            <li><a href="#learnings">Learnings for Pet Parents</a></li>
+            <li><a href="#memory">Closing Note</a></li>
+          </ul>
+        </div>
+      </section>
 
-    <script>
-        const progressBar = document.getElementById( 'progressBar' );
-        const backToTop = document.getElementById( 'backToTop' );
+            <div class="quote-card">
+        <p class="quote-text">He was family. Loved. Fought for. Never forgotten.</p>
+        <p class="quote-source">For Kalu</p>
+      </div>
 
-        window.addEventListener( 'scroll', () => {
-            const scrolled = window.scrollY;
-            const height = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = height > 0 ? ( scrolled / height ) * 100 : 0;
-            progressBar.style.width = `${progress}%`;
-        } );
+<section id="life" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 1">Before He Had a Name [Nov 2016]</h2>
+        <h3 class="title is-5">1.1 The Ordinary Night That Stopped Being Ordinary [Nov 2016]</h3>
+        <p>I did not plan to bring a dog home that night. There was no thought of responsibility, no calculation of
+          money, time, or future. I was not emotionally prepared for a life to depend on me. I was simply standing on a
+          street, late at night, on a work call, trying to finish what the day demanded from me.</p>
+        <p>That is how ordinary moments begin until they stop being ordinary.</p>
+        <p>It was the last week of November 2016. The street was familiar. Nothing about the night felt special. Then I
+          noticed movement that did not belong to the background noise of the city. A few dogs were circling something
+          smaller. At first glance, it did not look dramatic. Dogs gather all the time. But this was different. Their
+          movement was not playful. It was not curious. It was calculated. They were closing space, tightening distance,
+          waiting for an opening.</p>
+        <p>The puppy in the middle was small. Too small to defend himself, too small to understand what was happening.
+          He was not barking. He was not running properly. He was frozen in confusion.</p>
+        <p>I did not think. I did not weigh consequences. I picked him up.</p>
+        <p>I continued my work call while holding him. The call lasted almost another hour. During that entire time, the
+          puppy stayed with me, on my lap, climbing, licking, playing, as if he had already decided that this was safe
+          now.</p>
+        <p>The bigger dogs did not leave. They stayed at a distance, watching, waiting for me to move away, waiting for
+          me to put the puppy down. That is when it became clear to me: If I walked away, even for a moment, the puppy
+          would not survive the night.</p>
+        <p>There was no dramatic rescue scene. No cheering. No help from anyone nearby. It was just a quiet decision
+          made in the middle of a normal street.</p>
+        <p>I brought the puppy into our society parking. I locked the gate. At that moment, I still believed this was
+          temporary. I assumed that by morning, the puppy would go away on his own, find his way, disappear back into
+          the randomness of the city. I went upstairs.</p>
+        <p>That night passed without ceremony. No celebration. No naming. No declarations of forever. Just a puppy
+          locked safely away from death.</p>
 
-        backToTop.addEventListener( 'click', () => {
-            window.scrollTo( { top: 0, behavior: 'smooth' } );
-        } );
-    </script>
+        <h3 class="title is-5">1.2 The Morning That Changed Everything [Nov 2016]</h3>
+        <p>The next morning, I went down to the parking. I did not call his name. He did not have one yet. I made a
+          small sound, instinctive, meaningless: "चुक चुक."</p>
+        <p>From the first floor, I heard movement. The puppy came down the stairs. Not slowly. Not hesitantly. He ran.
+          He ran as if he already knew me.</p>
+        <p>I picked him up. He licked my ears. That was not affection learned over time. That was trust given instantly.
+        </p>
+        <p>In that moment, something irreversible happened, even if I did not yet understand it.</p>
+        <p>I went upstairs and asked my father a simple question: "Should I keep him?"</p>
+        <p>My father said yes. There was no long discussion. No list of reasons. No warnings. Just agreement. The puppy
+          stayed.</p>
+        <p>That puppy would later be called Kalu.</p>
+
+        <h3 class="title is-5">1.3 The House He Walked Into [Nov 2016]</h3>
+        <p>When Kalu entered our home, the house was already carrying weight.</p>
+        <p>My father was not well, not temporarily, not mildly. Three years earlier, he had met with a serious accident
+          on the Hadapsar bridge while riding a two-wheeler. The damage was neurological. One leg was partially
+          paralysed. His vision was affected in both eyes. He could not see clearly anymore, not consistently, not
+          reliably.</p>
+        <p>This kind of injury does not announce itself loudly. It settles into daily life. Movement becomes cautious.
+          Confidence becomes fragile. Independence slowly slips away.</p>
+        <p>Our flat was on the ground floor, with a decent garden area. That garden became part of Kalu's early world,
+          and also a quiet extension of my father's limited mobility.</p>
+        <p>My sister and I went to college. We were away for long hours. During that time, my father stayed home alone.
+          Not alone in the sense of absence of people, but alone in the sense that the world had become harder to
+          navigate.</p>
+        <p>Kalu grew up inside this environment. Not as a distraction. Not as entertainment. But as presence. He stayed
+          close to my father without being taught to do so. He learned where to position himself so my father would not
+          trip. He sensed when to move and when to stay still. He did not demand attention. He did not create chaos. He
+          simply existed where he was needed.</p>
+        <p>People in the society began to complain. Some people are genuinely scared of dogs. That fear is real, and I
+          do not deny it. But many complaints came even when Kalu was not near anyone. Some people wanted trouble.
+          Arguments happened. Stress increased.</p>
+        <p>What those people never saw was what happened inside our home. Kalu was not adding burden. He was absorbing
+          it. The house did not collapse during those months, not because life was easy, but because something steady
+          stayed inside it.</p>
+
+        <h3 class="title is-5">1.4 He Did Not Save Us, He Stabilised Us [2016]</h3>
+        <p>Kalu did not cure my father. He did not fix paralysis. He did not restore vision. But he did something
+          quieter and harder to notice. He made the house bearable. He occupied silence so it did not turn into despair.
+          He became something predictable in a life that had lost predictability.</p>
+        <p>At that time, none of us said this out loud. We did not know yet how important it was.</p>
+      </section>
+
+      <section id="learning" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 2">Learning to Live With Each Other [2016-2017]</h2>
+        <h3 class="title is-5">2.1 Adjusting Without a Manual [2016-2017]</h3>
+        <p>Kalu did not arrive as a trained dog. He arrived as a question.</p>
+        <p>Every day after that morning in November 2016 became an adjustment, not just for him, but for us. There was
+          no manual, no transition period where things slowly fell into place. Life continued at its pace, and Kalu
+          learned to move inside it.</p>
+        <p>Our flat was on the ground floor, with a garden that opened directly into the outside world. That garden
+          became Kalu's first real territory. Not ownership, familiarity. He learned the smell of the soil. The pattern
+          of birds. The timing of footsteps. The difference between morning quiet and evening noise. He learned without
+          instruction.</p>
+        <p>My sister and I were still going to college. Most of the day, the house belonged to my father and Kalu. This
+          was not companionship in a dramatic sense. It was not playing all day or constant interaction. It was quieter
+          than that.</p>
+        <p>Kalu stayed close. He would lie where my father could sense him. Not necessarily touching, just present.
+          Always within awareness. If my father shifted in his chair, Kalu shifted. If my father rested, Kalu settled.
+          If my father moved slowly, Kalu gave him space. There was an intelligence in this that no one taught him.</p>
+
+        <h3 class="title is-5">2.2 The Weight of Being Seen by Others [2016-2017]</h3>
+        <p>Outside our home, Kalu's presence was not always welcomed. Some people in the society were scared of dogs. I
+          understood that. Fear is instinctive, and it does not always need justification. But there were others who
+          were not afraid, they were uncomfortable. Uncomfortable with a dog in shared space. Uncomfortable with a
+          family already dealing with disability. Uncomfortable with something they could not control.</p>
+        <p>Complaints started coming in. Not because Kalu had bitten anyone. Not because he chased or attacked.
+          Sometimes he was not even near the people complaining. Arguments happened. Tension rose. It added another
+          layer of stress to a house that already had enough.</p>
+        <p>Kalu did not react to this chaos. He did not become aggressive. He did not grow anxious. If anything, he
+          became more contained. He learned where to sit. Where not to cross. When to be visible and when to disappear
+          into corners. He was not shrinking himself out of fear. He was adapting.</p>
+
+        <h3 class="title is-5">2.3 Food, Routine, and Small Preferences [2016-2017]</h3>
+        <p>Kalu's food was simple, almost basic. Milk. Chapati. Maida pav. Sugary things he should not have liked but
+          did. Raw vegetables in his early days. There was nothing curated or fancy about his meals.</p>
+        <p>He loved chicken tandoor from early on. That was obvious. But I am vegetarian, so he did not get it often.
+          Mostly weekends. He accepted that without protest. Food never became a point of conflict. He ate what was
+          given. He enjoyed what he could.</p>
+        <p>Baths, however, were a different story. Kalu hated bath time. The word "अंघोळ" alone could change his mood.
+          He resisted water when it was forced on him. He avoided tubs, buckets, and attempts to clean him on command.
+        </p>
+        <p>And yet, rain walks were his joy. When it rained, and we went out for a walk, he loved getting wet naturally.
+          He enjoyed rain on his body when it was part of movement, freedom, choice. That contradiction stayed with him
+          all his life.</p>
+
+        <h3 class="title is-5">2.4 Freedom Without Chaos [2016-2017]</h3>
+        <p>Kalu was never chained. He was never tied to one location. Never restricted to a corner.</p>
+        <p>He moved freely inside the house and garden. Sometimes, when allowed, he went outside. There was an empty
+          ground in front of our society then. He would go there, do his chores, and return on his own.</p>
+        <p>No calling. No chasing.</p>
+        <p>He learned the boundaries of home not through restriction, but through repetition. Later, he learned chain
+          walking too. But that was a skill, not a requirement for obedience. He understood space intuitively.</p>
+
+        <h3 class="title is-5">2.5 Language Before Commands [2016-2017]</h3>
+        <p>Kalu did not learn English commands. He learned Marathi.</p>
+        <p>He responded clearly to: "चला", "खायचे", "बाहेर जायचे". These were not commands shouted for control. They
+          were shared language.</p>
+        <p>Some words he disliked deeply. "अंघोळ". "Kame Hame Haa" - something I used to say playfully while shaking
+          him, from Dragon Ball Z. "मारू का". "सरक".</p>
+        <p>He reacted to tone, not just words. He understood intent.</p>
+
+        <h3 class="title is-5">2.6 Rough Play and Honest Boundaries [2016-2017]</h3>
+        <p>Kalu's play was not soft. He liked running behind us in the garden. Chasing legs. Jumping suddenly. Playing
+          hide-and-seek. He did not care for toys. He ignored balls, ropes, anything artificial. He loved wooden sticks.
+          He loved rugs, grabbing, pulling, testing strength.</p>
+        <p>Sometimes play turned aggressive. Across his life, he bit only me, once or twice in those early meeting days,
+          and later occasionally when play crossed a line or on days I still do not fully understand. I never hurt him.
+        </p>
+        <p>In his first two or three walks, I used a stick briefly for discipline. Not out of anger. Out of
+          inexperience. He learned quickly. After that, we never needed it again. There was no pattern of fear. There
+          was no cycle of violence. There was learning.</p>
+
+        <h3 class="title is-5">2.7 The Quiet Bond That No One Noticed [2016-2017]</h3>
+        <p>While all this was happening, college, complaints, routines, something deeper was forming quietly.</p>
+        <p>Kalu was growing alongside my father. He was not replacing anyone. He was not filling a role. But when the
+          house felt fragile, he stayed steady. When voices were low, he did not add noise. When days were heavy, he did
+          not demand energy. He learned when to be visible and when to disappear into stillness.</p>
+        <p>At the time, I did not fully see this. It only made sense later.</p>
+
+        <h3 class="title is-5">2.8 June 2017 Came Without Warning [Jun 2017]</h3>
+        <p>In June 2017, my father passed away. There was no gradual preparation for that loss. One day, he was there.
+          The next, he was not.</p>
+      </section>
+
+      <section id="after-pillar" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 3">After One Pillar Left, and Life Did Not Stop [2017-2019]</h2>
+        <h3 class="title is-5">3.1 The House Without a Centre [2017-2019]</h3>
+        <p>When my father passed away in June 2017, nothing announced itself loudly. There was no dramatic collapse of
+          routine. No visible breaking point where the house fell apart. Life simply continued without him. That is what
+          made it harder.</p>
+        <p>The house did not scream. It went quiet. The kind of quiet that does not ask for attention but slowly takes
+          up space.</p>
+        <p>My sister and I were suddenly responsible for more than we were ready for. Responsibilities did not arrive in
+          a list. They arrived as weight, distributed unevenly across days.</p>
+        <p>By December 2017, my office life intensified. Longer hours. More pressure. Less presence at home. This was
+          not a choice I debated emotionally. It was survival. Bills did not pause for grief. Work did not slow down
+          because someone had died.</p>
+        <p>Kalu adjusted again.</p>
+
+        <h3 class="title is-5">3.2 Reduced Time, Increased Distance, Without Abandonment [2017-2019]</h3>
+        <p>As my work hours increased, I spent less time at home. That guilt never left. It stayed in the background,
+          never loud enough to paralyse me, but never quiet enough to ignore.</p>
+        <p>Kalu did not react with resentment. He did not destroy things. He did not become needy. He did not withdraw.
+          He simply recalibrated. He learned the rhythms of absence. He understood when mornings were rushed and
+          evenings were exhausted. He adapted to the reality of someone coming home tired rather than available. This
+          was not obedience. This was intelligence.</p>
+
+        <h3 class="title is-5">3.3 Growing Without Guidance, Yet Not Lost [2017-2019]</h3>
+        <p>Kalu was growing physically now. Stronger. More aware of his size. More confident in movement. He was not
+          formally trained. There were no classes. No obedience drills.</p>
+        <p>And yet, he learned boundaries. He learned which areas were his. Which were shared. Which required caution.
+          He knew when to be visible and when to retreat into corners of familiarity. He remained free.</p>
+        <p>He still went out occasionally on his own, did his chores, and came back. The empty ground in front of the
+          society was still there then. He knew the route. He knew the return. There was trust both ways.</p>
+
+        <h3 class="title is-5">3.4 Society, Again [2017-2019]</h3>
+        <p>Complaints did not stop after my father's passing. In some ways, they increased. Perhaps because
+          vulnerability invites scrutiny. Perhaps because a family without an elder becomes easier to pressure. Perhaps
+          because people sensed there was less resistance.</p>
+        <p>Arguments happened. Tension flared. Kalu remained unaffected. He did not react to raised voices. He did not
+          mirror aggression. If anything, he became more observant. He started recognising not just people, but intent.
+          He knew which footsteps were familiar. Which bikes belonged to people he trusted. Which voices signalled
+          comfort.</p>
+        <p>From inside the flat, he could correctly identify arrivals, friends, familiar visitors, family, before we
+          opened the door. He would start wagging his tail early, certain of who was coming. This ability never felt
+          like a trick. It felt like awareness sharpened by attention.</p>
+
+        <h3 class="title is-5">3.5 A Brother, Not a Responsibility [2017-2019]</h3>
+        <p>At some point during these years, something subtle but important shifted in me.</p>
+        <p>I stopped thinking of Kalu as my dog. He became something closer to a brother. Not in sentiment, but in
+          dynamic. We shared space without explanation. We coexisted without negotiation. We tolerated each other's
+          moods. He did not demand affection. I did not perform care. We simply lived together.</p>
+
+        <h3 class="title is-5">3.6 The Days That Were Just Days [2017-2019]</h3>
+        <p>There were no major milestones during this period. No dramatic stories. No defining incidents. Just days.
+          Days where Kalu slept in familiar spots. Days where he watched birds from the garden. Days where he chased
+          cats along the wall. Days where he played rough, ran, stopped suddenly, lay down. Days where nothing happened
+          and everything was stable.</p>
+        <p>Looking back, these were the strongest years. Because nothing needed fixing.</p>
+
+        <h3 class="title is-5">3.7 The Silence That Stayed [2017-2019]</h3>
+        <p>Even as time moved forward, my father's absence did not fade. It became background. Not painful every moment.
+          But present always.</p>
+        <p>Kalu did not fill that absence. He acknowledged it. He lay in spaces my father used to occupy. He stayed near
+          where silence felt heaviest. He did not replace anyone. He made it possible to live with the absence without
+          being consumed by it.</p>
+
+        <h3 class="title is-5">3.8 The World Was About to Change [Late 2019]</h3>
+        <p>By late 2019, something else was approaching, something that would slow time for everyone. The world would
+          pause. And for the first time in years, I would be home again, not out of choice, but circumstance.</p>
+        <p>That is where Kalu's life entered its next phase.</p>
+      </section>
+
+      <section id="covid" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 4">When the World Stopped, and Time Came Back [2019-2022]</h2>
+        <h3 class="title is-5">4.1 Time Returned, But Not as Peace [2019-2022]</h3>
+        <p>When COVID arrived, it did not knock. It shut doors. Offices closed. Roads emptied. Plans dissolved
+          overnight. What had always felt permanent suddenly became uncertain. For the first time in years, the world
+          slowed down, not by choice, but by force.</p>
+        <p>And suddenly, I was home. Not for a weekend. Not for a few days. Every day. For a long time.</p>
+        <p>At first, it did not feel like relief. There was anxiety everywhere. News. Numbers. Fear. Isolation. The
+          house was quiet again, but this time it was a different kind of quiet.</p>
+        <p>My friends started coming over once restrictions eased. Slowly. Carefully. They filled the house in a way it
+          had not been filled since my father passed away.</p>
+        <p>Kalu noticed immediately. He did not retreat from new presence. He did not become territorial. He observed.
+        </p>
+
+        <h3 class="title is-5">4.2 Kalu and People, Not Dogs [2019-2022]</h3>
+        <p>Kalu had always preferred humans over dogs. That did not change. During this period, it became clearer.</p>
+        <p>He did not rush toward people. He did not jump or demand affection. He watched first. Then he decided. Once
+          accepted, he remembered.</p>
+        <p>He remembered voices. Footsteps. The way people laughed. The way they sat. The way they moved around the
+          house. He adjusted himself around them without being intrusive. Friends noticed this. "He understands," some
+          of them said. And they were right.</p>
+        <p>He did not seek constant interaction. He stayed nearby. Present, but not needy. When people sat, he sat. When
+          conversations slowed, he settled. When laughter rose, he watched.</p>
+
+        <h3 class="title is-5">4.3 The House Felt Alive Again [2019-2022]</h3>
+        <p>For the first time since 2017, the house felt occupied, not just inhabited. Friends came and stayed longer.
+          Meals stretched into conversations. Silence was shared instead of avoided.</p>
+        <p>Kalu moved through this naturally. He did not guard. He did not withdraw. He flowed. If someone stayed
+          overnight, Kalu knew. If someone left suddenly, Kalu noticed. He did not panic at change, he tracked it.</p>
+
+        <h3 class="title is-5">4.4 Play, Roughness, and Familiar Chaos [2019-2022]</h3>
+        <p>With more people around, play returned. Not structured play. Not planned. Spontaneous.</p>
+        <p>Kalu ran behind legs in the garden. Chased us. Stopped suddenly. Changed direction without warning. He played
+          hide-and-seek between trees, behind walls, behind furniture.</p>
+        <p>Sometimes play turned rough. That had always been his style. He did not know gentle play the way toy-trained
+          dogs do. He knew honest engagement. Strength testing. Presence testing.</p>
+        <p>He never bit strangers. Never troubled kids. He tolerated crowds of 30 to 40 people, including small
+          children, without aggression. He remained selective, but never unsafe.</p>
+
+        <h3 class="title is-5">4.5 Learning Without Training [2019-2022]</h3>
+        <p>This period highlighted something important. Kalu learned not because he was taught, but because he was
+          observing constantly. He picked up routines. He knew when food was coming. He knew when night walks were
+          likely. He knew when the house was settling down.</p>
+        <p>Words mattered less than patterns. He understood Marathi cues naturally, but more than that, he understood
+          context. Tone. Timing. Intent. That was his real language.</p>
+
+        <h3 class="title is-5">4.6 Vehicles, Revisited [2019-2022]</h3>
+        <p>Earlier attempts to train Kalu on two-wheelers had failed. We tried putting him on an Activa. He did not like
+          it. He never learned. He resisted without panic, but with clarity. This was not fear. It was rejection.</p>
+        <p>Later, with help from friends, we tried again, this time with the Maruti Alto. At first, he was hesitant. Not
+          anxious. Not trembling. Just uncertain. We did not force it. Gradually, he sat. Then stayed. Then watched the
+          road.</p>
+        <p>Over time, he began tolerating car rides. Eventually, he began enjoying them. Not excitement. Comfort.</p>
+
+        <h3 class="title is-5">4.7 Freedom, Still Intact [2019-2022]</h3>
+        <p>Despite lockdowns and restrictions, Kalu's freedom was not crushed. He still moved between house and garden
+          freely. He still chose where to sit. He still preferred clean places, bed, sofa, never mats. He still hated
+          bath time. He still loved rain walks. Mud, garden digging, bird watching, nothing changed. The world outside
+          was uncertain, but his world remained familiar.</p>
+
+        <h3 class="title is-5">4.8 The Quiet Bond Strengthened [2019-2022]</h3>
+        <p>During this phase, something else happened quietly. My bond with Kalu changed. Earlier years were about
+          survival. Adjustment. Holding things together. Now, it was about presence.</p>
+        <p>We were both there. Fully. Daily. No rushing out. No delayed returns. We shared space without urgency. He did
+          not fill my time. He accompanied it.</p>
+
+        <h3 class="title is-5">4.9 Nothing Felt Final Yet [2019-2022]</h3>
+        <p>Looking back now, it is tempting to treat these years as a prelude. But at the time, there was no sense of
+          before and after.</p>
+      </section>
+
+      <section id="family-changed" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 5">When Family Changed Shape [2022-Early 2025]</h2>
+        <h3 class="title is-5">5.1 The Return of Absence, But Different [2022-2025]</h3>
+        <p>When the world began opening up after COVID, life did not return to what it was before. It rearranged itself.
+          Work resumed. Movement returned. Days became structured again. The house that had been full during lockdown
+          slowly returned to quieter rhythms.</p>
+        <p>Kalu noticed this shift immediately. He always did.</p>
+        <p>Earlier absences had felt heavy. They had carried grief. This time, absence felt more practical. People went
+          out because life was moving again, not because something had been lost. Kalu adjusted without resistance. He
+          no longer needed to hold the house together. He no longer needed to compensate for silence. He simply lived.
+        </p>
+
+        <h3 class="title is-5">5.2 February 2023, Marriage and a New Centre of Gravity [Feb 2023]</h3>
+        <p>In February 2023, I got married. This was not a sudden event for Kalu. He had sensed change long before the
+          wedding day arrived. He watched preparations. He noticed new routines. He felt shifts in attention, movement,
+          and tone.</p>
+        <p>When my wife entered the house fully, Kalu made a decision of his own. He chose her. Not gradually. Not
+          hesitantly. Completely.</p>
+
+        <h3 class="title is-5">5.3 The Mother-Son Bond [2023-2025]</h3>
+        <p>Kalu's bond with my wife was different from his bond with anyone else. It was immediate, instinctive, and
+          deeply emotional. He followed her everywhere. Room to room. Kitchen to bedroom. Inside to outside. He did not
+          leave her alone. Not out of anxiety. Out of attachment. It was not dependency. It was belonging.</p>
+        <p>If she sat, he sat nearby. If she moved, he followed. If she left the house, he waited differently. There was
+          a tenderness in his behaviour that was unmistakable. It was a mother-son relationship. Pure. Unquestioned.
+          Absolute.</p>
+
+        <h3 class="title is-5">5.4 Where I Stood in That Shift [2023-2025]</h3>
+        <p>For me, Kalu remained a brother. That did not change. But I watched his emotional centre move, and I did not
+          resent it. I understood it.</p>
+        <p>Kalu had always chosen the person who felt most constant in that phase of life. Earlier, that had been my
+          father. Then the house itself. Then me, during lockdown. Now, it was my wife. This was not loss. It was
+          growth.</p>
+
+        <h3 class="title is-5">5.5 A Fuller Home, A Calmer Dog [2023-2025]</h3>
+        <p>With marriage came a different kind of stability. The house felt occupied again, not by crowds, but by
+          continuity.</p>
+        <p>Kalu responded to this calm. He became more settled. More relaxed. More certain of routine. He still played
+          rough. Still ran in the garden. Still chased cats. Still hated bath time. But there was less restlessness. He
+          had found his person.</p>
+
+        <h3 class="title is-5">5.6 Night Walks, His Greatest Joy [2022-2025]</h3>
+        <p>Through all changes, one thing never shifted. Kalu loved night walks. Late nights. Quiet roads. Familiar
+          smells. Sometimes with us. Sometimes alone. He would ask to go out after 9 PM, then again at 12 AM, sometimes
+          even 3 AM. Short walks. Purposeful walks. He would go. He would return. Always.</p>
+        <p>Those walks were not exercise. They were freedom rituals.</p>
+
+        <h3 class="title is-5">5.7 The City Changed, Kalu Adapted [2022-2025]</h3>
+        <p>As time passed, the empty ground near our society was built over. Space reduced. Kalu adapted again. He began
+          walking almost 100 meters to the main road to do his chores, then returned home. No confusion. No getting
+          lost. He knew his route.</p>
+        <p>The city had changed around him, but he did not lose his sense of home.</p>
+
+        <h3 class="title is-5">5.8 Comforts, Small and Personal [2022-2025]</h3>
+        <p>Kalu's preferences remained simple. He still loved sugary treats, milky items, pedha. He still preferred
+          sitting where we sat, bed or sofa, never mats. He still enjoyed rain walks while hating baths. He still
+          rejected anything forced and accepted anything chosen.</p>
+
+        <h3 class="title is-5">5.9 The New Car, The New Routine [2022-2025]</h3>
+        <p>As my financial condition improved, I bought a new car. Kalu liked it. Not excitedly. Comfortably. He sat
+          inside calmly. Observed. Trusted. It was another sign of stability, not indulgence.</p>
+
+        <h3 class="title is-5">5.10 Health, Strength, and No Warnings [Early 2025]</h3>
+        <p>By early 2025, Kalu was healthy. Alert. Strong. Aware. There were no signs of decline.</p>
+      </section>
+
+            <div class="quote-card">
+        <p class="quote-text">He did not exist to follow commands. He existed to participate in the world on his own terms.</p>
+        <p class="quote-source">Character</p>
+      </div>
+
+<section id="character" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 6">Who Kalu Truly Was [2016-2025]</h2>
+        <h3 class="title is-5">6.1 Awareness Before Action [2016-2025]</h3>
+        <p>Kalu was not an easy dog. He was not predictable, obedient-for-approval, or eager to please. And that is
+          exactly what made him real.</p>
+        <p>He was intelligent, observant, selective, protective, and deeply aware of his surroundings. He did not exist
+          to follow commands, he existed to participate in the world on his own terms.</p>
+        <p>Kalu noticed things before reacting to them. From inside the flat, he could recognise specific bikes, cars,
+          and voices. Many times, he would begin wagging his tail even before the door opened, already certain who was
+          arriving. This was not excitement. It was recognition. He knew patterns. He remembered people.</p>
+
+        <h3 class="title is-5">6.2 Welcome, With Responsibility [2016-2025]</h3>
+        <p>Kalu was welcoming by default, but never careless. If the bell rang unexpectedly, especially delivery people
+          or unfamiliar visitors, he barked. If unfamiliar dogs entered the parking area, he barked protectively.</p>
+        <p>He did not bark without reason. And he did not bark endlessly. He assessed first. Then acted.</p>
+
+        <h3 class="title is-5">6.3 Play That Was Honest, Not Polished [2016-2025]</h3>
+        <p>Kalu's play style was rough and physical. He liked playing with legs, running behind us, jumping suddenly in
+          mock aggression that was clearly play, until, at times, it crossed into intensity. He loved rug pulling,
+          testing strength, resistance, reaction.</p>
+        <p>He had no interest in toys. Balls, ropes, artificial playthings meant nothing to him. He preferred wooden
+          sticks, simple, real, tactile.</p>
+        <p>Throughout his life, he bit only me, hands, legs, thighs, sometimes even forehead. Mostly when play turned
+          aggressive, sometimes without a clear reason. I never hurt him. This is written honestly, without
+          justification or denial.</p>
+        <p>In the first two or three walks of his life, I used a stick once for discipline. He learned quickly. We never
+          needed it again.</p>
+
+        <h3 class="title is-5">6.4 Selective With Dogs, Deep With Humans [2016-2025]</h3>
+        <p>Kalu was slow to trust other dogs. He did not make friends easily. But he did have a few, Biscuit, Riya, and
+          some others.</p>
+        <p>With humans, he was different. He remembered people deeply, not casually. He recognised and remembered many,
+          Swapnil, Mayur, Jayesh, Akshay, Aditya, Rakesh, Akash, Vishal, Jaywant, Tushar, Shruti, Vera, Shivani, and
+          others. He did not just know them. He stored them.</p>
+
+        <h3 class="title is-5">6.5 Space, Dirt, and Clean Choices [2016-2025]</h3>
+        <p>Kalu loved mud. He played in it. He dug in the garden. And yet, he preferred clean places to sit. He never
+          chose a mat. He chose the bed or sofa, wherever we were sitting. He wanted proximity, not comfort alone.</p>
+
+        <h3 class="title is-5">6.6 The Garden Watcher [2016-2025]</h3>
+        <p>One of Kalu's favourite things was sitting in the back garden. Watching birds. Tracking movement.</p>
+        <p>When cats appeared on the garden wall, he reacted instantly, barking, chasing, alert and alive. This was not
+          obsession. It was engagement.</p>
+        <p>He used to enjoy back scratches and belly rubs from all humans.</p>
+
+        <h3 class="title is-5">6.7 Language He Understood [2016-2025]</h3>
+        <p>Kalu understood Marathi naturally, without training.</p>
+        <div class="content">
+          <p>Words he clearly understood:</p>
+          <ul>
+            <li>"चला" - let's go</li>
+            <li>"खायचे" - hungry?</li>
+            <li>"बाहेर जायचे" - want to go outside?</li>
+          </ul>
+          <p>Words he clearly disliked:</p>
+          <ul>
+            <li>"अंघोळ" - bath</li>
+            <li>"Kame Hame Haa" - from Dragon Ball Z</li>
+            <li>"मारू का" - beat you</li>
+            <li>"सरक" - move aside</li>
+          </ul>
+        </div>
+        <p>He hated bath time, the idea, the word, the process. Yet he loved rain walks. He enjoyed getting wet by
+          choice, outside, in motion.</p>
+
+        <h3 class="title is-5">6.8 Night Walks, His Greatest Joy [2016-2025]</h3>
+        <p>Kalu's greatest joy was going out at night. Sometimes with us. Sometimes alone. Late hours, 9 PM, 12 AM, even
+          3 AM. He would go. He would return. Every time. Those walks were not routine. They were freedom rituals.</p>
+
+        <h3 class="title is-5">6.9 Places He Visited, Memories Not Miles [2016-2025]</h3>
+        <p>Kalu did not care about distance. He cared about presence. Places he visited and experienced:</p>
+        <div class="content">
+          <ul>
+            <li>Lonavala</li>
+            <li>Ghoradeshwar</li>
+            <li>NH4 Highway</li>
+            <li>Hinjewadi</li>
+            <li>Ladhghar</li>
+            <li>Datta Mandir, Kasarwadi</li>
+            <li>Jambhulwadi</li>
+          </ul>
+        </div>
+        <p>The place mattered less than being together.</p>
+
+        <h3 class="title is-5">6.10 Small Moments That Defined Him [2016-2025]</h3>
+        <p>Recognising our vehicles and voices from inside the flat. Sitting in the garden watching birds, reacting
+          instantly to cats. Late-night walks, going out and returning on his own. Rough play that shifted naturally
+          back to calm. Enjoying rain walks while still hating bath time.</p>
+      </section>
+
+      <section id="accident" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 7">The Night Everything Broke [11 Dec 2025]</h2>
+        <h3 class="title is-5">7.1 Routine, Not Risk [11 Dec 2025]</h3>
+        <p>The day of 11 December 2025 did not feel unusual. There were no signs. No strange behaviour. No instinct
+          warning us to hold him back. Kalu ate. He rested. He moved around the house the way he always did. Night came
+          the way it always had.</p>
+        <p>Around 9:30 PM, Kalu asked to go out. This was normal. Night walks were his greatest joy. He did not rush. He
+          did not sneak out. He asked through presence, movement, familiarity. We trusted that routine because it had
+          never betrayed us before.</p>
+        <p>He had done this countless times. He knew the route. He knew the return. We let him go. There was no sense of
+          danger. No hesitation. Nothing felt wrong.</p>
+
+        <h3 class="title is-5">7.2 The Call That Should Never Exist [11 Dec 2025]</h3>
+        <p>Some time later, between 9:30 PM and 10:00 PM, my phone rang. An unknown number. I answered without urgency.
+          The voice on the other side said something that took a moment to register: "कालू का एक्सिडेंट हुआ है।"</p>
+        <p>For a second, it did not make sense. Accident was a word that belonged to roads, vehicles, strangers. Not to
+          Kalu. Not to routine. Not to a night that had started normally.</p>
+        <p>Then my body reacted before my mind did. I ran.</p>
+
+        <h3 class="title is-5">7.3 The Place Where It All Began, Again [11 Dec 2025]</h3>
+        <p>When we reached the spot, the first thing that hit me was recognition. This was the same place where I had
+          found Kalu as a puppy in 2016. The same stretch. The same road. The beginning and the breaking happened at the
+          same location.</p>
+        <p>People were standing around. Around 20 to 30 people. They spoke in fragments. Someone said a biker hit him.
+          Someone said the biker was drunk. Someone said the biker was speeding. They said the biker and another person
+          fled. No one had stopped them. No one had taken Kalu to a hospital.</p>
+
+        <h3 class="title is-5">7.4 The Moment of Absolute Helplessness [11 Dec 2025]</h3>
+        <p>Kalu was lying there. No dramatic bleeding. No obvious wounds. But his body was wrong. His neck. His head.
+          His eye. He was breathing, but not right.</p>
+        <p>I asked people to help. I begged them to stop a rickshaw so my wife and I could take him to a hospital. No
+          one helped. People looked. Some spoke. Some moved away. No one acted.</p>
+        <p>That moment, standing there, surrounded by people, unable to move my injured dog, is one I will never forget.
+        </p>
+
+        <h3 class="title is-5">7.5 Bringing Him Home to Save Him [11 Dec 2025]</h3>
+        <p>I ran back home. Took the car. Put Kalu inside. Every movement felt wrong. Every bump on the road felt like
+          damage I could not see. We did not discuss where to go. We just went to the nearest place we knew could help.
+        </p>
+
+        <h3 class="title is-5">7.6 Petozone, Pimple Saudagar, The First Right Step [11 Dec 2025]</h3>
+        <p>We reached Petozone, Pimple Saudagar between 10:00 PM and 11:00 PM. They examined him immediately.
+          Externally, there were no major injuries. That almost gave false hope. Internally, they knew it was bad.</p>
+        <p>They told us clearly: neck injury. Head trauma. Left eye damage. Possible spinal cord involvement.</p>
+        <p>They did not waste time. They gave saline. They stabilised him as much as possible. They did not give false
+          assurance. They told us the truth: "This is critical. He needs a 24/7 advanced hospital."</p>
+        <p>We accepted that immediately. There was no argument. No denial. We were ready to fight.</p>
+
+        <h3 class="title is-5">7.7 Searching for Care in the Middle of the Night [11 Dec 2025]</h3>
+        <p>From that moment, the night became a series of refusals. We went to Crown Vet, Aundh. They refused us. Not
+          after examination. Not after seeing Kalu. They did not come out. No doctor. No nurse. Only the watchman
+          interacted with us, acting as a mediator between us and a building that had the lights on but the doors
+          closed.</p>
+        <p>That refusal stayed with me. Not because they could not help, but because they did not even look.</p>
+        <p>From there, every call, every suggestion pointed to one place: "Raintree." "The best place." "The only
+          place." "24/7."</p>
+        <p>We called. First refusal, no occupancy. We went there personally. Second refusal, annual anniversary party. A
+          celebration.</p>
+        <p>We reached Vetic and were admitted between 11:30 PM and 12:00 AM.</p>
+      </section>
+
+            <div class="quote-card">
+        <p class="quote-text">Survival is not the only measure of care. Empathy matters. Communication matters. Preparedness matters.</p>
+        <p class="quote-source">Critical Care</p>
+      </div>
+
+<section id="icu" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 8">Accident & Critical Care Timeline [12-16 Dec 2025]</h2>
+        <div class="mt-4 flex flex-col lg:flex-row gap-6">
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm lg:w-44 shrink-0 self-start">
+            <img loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover" src="kalu_gallery/icu/critical-care.jpg"
+              alt="Days Counting On" />
+            <figcaption class="p-3 text-sm text-gray-600">Days Counting On</figcaption>
+          </figure>
+          <div class="timeline-line pl-8 flex-1">
+            <div class="relative timeline-dot mb-10">
+              <div class="box">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h3 class="title is-5 mb-0">8.0 The Day We Waited, and the Door Stayed Closed [12 Dec 2025]</h3>
+                  <span class="tag is-warning status-pill">Mixed</span>
+                </div>
+                <h4 class="title is-6">Our Account</h4>
+                <p>12 December 2025 did not begin with panic. It began with hope under exhaustion.</p>
+                <p>Kalu was still at Vetic. He was injured, severely, but he was alive. That single fact carried us
+                  through the night and into the morning. We had not slept properly. We had slept in the car in
+                  fragments.
+                  Two hours here. Three hours there. But we were awake enough to notice something important. Kalu was
+                  responding. He reacted to familiar voices. He lifted his ears. He tried to move. This was not
+                  recovery,
+                  but it was presence, and presence is all hope needs.</p>
+                <p>The doctors at Vetic were clear and consistent. They did not sugar-coat anything. They did not speak
+                  in
+                  circles. They explained Kalu's condition in plain human language, not technical jargon. Someone was
+                  continuously monitoring him. We could see that with our own eyes.</p>
+                <p>Investigations were already done: X-rays, blood tests, monitoring. And we could also see the ceiling.
+                  Vetic did not have MRI. They did not have certain advanced interventions. They told us this honestly.
+                  That honesty mattered. But it also forced us into a corner.</p>
+                <p>Every serious conversation that day eventually returned to one word: MRI. Not because MRI guarantees
+                  survival. But because without it, no one could fully see what had been damaged, especially with
+                  suspected neck, head, and spinal injury.</p>
+                <p>And in Pune, MRI for animals meant something very specific. It meant one place. There were no
+                  alternatives we could choose between. There was no comparison to make. The system narrowed to a single
+                  path.</p>
+                <p>On 12 December, we went personally to Raintree to request admission. Not to argue. Not to complain.
+                  To
+                  request. To explain. To ask them to take Kalu.</p>
+                <p>We went there knowing fully that Kalu was in a fragile state, moving him carried risk, but staying
+                  without MRI also carried risk. There was no good option. Only responsibility.</p>
+                <p>That moment stays with me. Not because they refused. But because there was nowhere else to go. There
+                  was no second advanced ICU. No backup MRI facility. The reality of monopoly became painfully clear,
+                  not
+                  as an idea, but as lived experience. When one door controls everything, refusal does not feel like a
+                  decision. It feels like being stranded.</p>
+                <p>We went back to Vetic. Kalu was still there. Alive. Fighting. We stayed near him. Watched him.
+                  Waited.
+                  We slept in the car again. The night of 12 December passed in suspension, not crisis, not calm. Just
+                  waiting for morning.</p>
+                <p>That night was not dramatic. No alarms. No rushing doctors. Just exhaustion. We kept asking ourselves
+                  the same questions silently: Are we doing the right thing? Is moving him tomorrow safe? Is waiting
+                  worse? There was no answer. Only time moving forward regardless of our uncertainty.</p>
+                <p>We knew that 13 December would decide everything. If Raintree took Kalu, the fight would continue
+                  inside that system. If they did not, we would be left with no escalation path at all.</p>
+                <p>That night ended without resolution. But it ended with one plan: We would move Kalu on 13 December.
+                  Not
+                  because we were confident. But because there was no alternative left.</p>
+
+                <h4 class="title is-6">Clinic Response</h4>
+                <p>At Raintree, we were told that they could not take Kalu that day. The reasons communicated to us were
+                  related to their anniversary event and operational constraints. We were told to come back the next
+                  day.
+                </p>
+
+                <h4 class="title is-6">Our Clarification</h4>
+                <p>This was not a phone call misunderstanding. This was not hearsay. We were there in person, standing
+                  outside with a critically injured dog admitted elsewhere, asking for help. The door did not open.</p>
+              </div>
+            </div>
+
+            <div class="relative timeline-dot mb-10">
+              <div class="box">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h3 class="title is-5 mb-0">9.0 Entering the System With No Way Back [13 Dec 2025]</h3>
+                  <span class="tag is-success status-pill">Partially aligned</span>
+                </div>
+                <h4 class="title is-6">Our Account</h4>
+                <p>13 December 2025 began without rest. The night at Vetic had ended in fragments of sleep inside the
+                  car,
+                  not because we wanted to be close, but because going home felt wrong. Leaving Kalu behind, even for a
+                  few hours, felt like abandonment, even though logic said otherwise.</p>
+                <p>Morning came, and with it came the decision we had already made the night before. We would move Kalu.
+                  Not because he was stable. Not because it was safe. But because staying meant accepting limits that
+                  could cost him his life.</p>
+                <p>Inside Vetic, the doctors explained again what we already knew. Kalu was fragile. Neck injury. Head
+                  trauma. Possible spinal involvement. Movement itself was a risk.</p>
+                <p>But they also knew what we knew. Without MRI, without advanced intervention, we were standing still
+                  in
+                  a situation that demanded motion. There was no drama in that conversation. Only gravity.</p>
+                <p>When it was time to move Kalu, everything slowed down. Every touch mattered. Every lift felt
+                  dangerous.
+                  This was not just transferring a patient. This was transferring hope.</p>
+                <p>We left Vetic knowing that, emotionally, we were leaving the place where we had felt the most clarity
+                  and empathy since the accident. That hurt more than we expected.</p>
+                <p>We left Vetic at 10:30 AM on 13 December and reached Raintree around 11:15 AM. When we reached
+                  Raintree, Kalu was brought in. There was no stretcher. Despite clear neck and spinal injury, he was
+                  lifted and carried by hand. That image stayed with me. Not because I expected luxury. But because
+                  basic
+                  caution mattered. CCTV would later show who carried him. But at that moment, there was no space to
+                  argue. Only fear that another wrong movement could add damage we would never see.</p>
+                <p>The admission wait continued around 11:30 AM.</p>
+                <p>The first thing that shifted was not treatment. It was communication. At Vetic, doctors spoke to us
+                  like people. At Raintree, the language became technical immediately. Medical terms. Short
+                  explanations.
+                  Assumptions of understanding. We kept asking for clarification. Sometimes we received it. Sometimes we
+                  were left translating jargon into meaning ourselves. This was not hostility. But it was distance. And
+                  distance matters when you are terrified.</p>
+                <p>Very early on, we were told something that stayed with us. Kalu's condition was critical. The
+                  injuries
+                  were severe. Survival was not guaranteed. We accepted that. We never denied the seriousness. What we
+                  struggled with was how that seriousness was communicated, more as data than as preparation.</p>
+                <p>MRI did not happen immediately. Not because it was not needed. But because it depended on
+                  availability,
+                  specifically, the availability of an anaesthesia expert. Time passed. We waited. We followed up.
+                  Finally, after 3:30 PM, things began to move. The MRI process was initiated.</p>
+                <p>Consent for anaesthesia was taken on the spot. There was no long preparation. No gradual explanation
+                  over the day.</p>
+                <p>Kalu was taken for MRI. We waited outside. There is a particular kind of waiting that happens when
+                  you
+                  have no control, no information, and no alternative. This was that kind. Minutes stretched. Silence
+                  felt
+                  loud.</p>
+                <p>When Kalu was brought back and anaesthesia was reversed, something unexpected happened. He responded.
+                  He reacted to our voices. He lifted his head. He tried to stand. For a moment, just a moment, it felt
+                  like something had shifted. Not recovery. But resilience. That moment mattered more than any report.
+                  It
+                  reminded us that Kalu was still present, still fighting, still connected.</p>
+                <p>After MRI, permissions began coming in waves. More tests. Blood work. Tick fever testing from
+                  Bangalore. Further monitoring. We did not hesitate. Money was never a discussion. We said yes to
+                  everything. Even when they told us he might never walk again. We said yes. We accepted that future
+                  without negotiation.</p>
+
+                <h4 class="title is-6">Clinic Response</h4>
+                <p>We were told clearly: "There is no guarantee he will survive MRI or anaesthesia."</p>
+
+                <h4 class="title is-6">Our Clarification</h4>
+                <p>That sentence did not come before the process was set in motion. It came inside it. We were given
+                  very
+                  little time to process it. But we agreed. Because MRI had become the gatekeeper for everything else.
+                </p>
+              </div>
+            </div>
+
+            <div class="relative timeline-dot mb-10">
+              <div class="box">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h3 class="title is-5 mb-0">10.0 The Night Trust Broke [13-14 Dec 2025]</h3>
+                  <span class="tag is-danger status-pill">Disputed</span>
+                </div>
+                <h4 class="title is-6">Our Account</h4>
+                <p>We were home, but we were not present. Our bodies were inside the house, but our minds were still
+                  inside the ICU.</p>
+                <p>It was around 10:45 PM when the call came saying Kalu's condition was not good. We immediately said
+                  we
+                  would come. There was no hesitation. No discussion. We were told we could not. Visiting hours were
+                  over.
+                  The explanation was procedural, not medical. That distinction mattered more than anyone realised.</p>
+                <p>We asked what "not good" meant. The answers were vague. Words like unstable, monitoring, critical
+                  floated around without anchors. There was no clear picture, no step-by-step explanation of what had
+                  changed since we last saw him at 8:30 PM. We asked if vitals were okay. We were told they were being
+                  monitored. We asked again. We were told things were under control. That conversation ended without
+                  clarity.</p>
+                <p>Around 11:30 PM, we called again. The person on the phone, reception, told us: "Kalu is fine. Vitals
+                  are normal." That sentence should have ended the anxiety. It did not. Because immediately after that
+                  reassurance, we heard shouting in the background. Not raised voices in urgency. Shouting. We could
+                  hear
+                  staff arguing. We could hear panic. We could hear a machine making repeated beep-beep sounds. No one
+                  muted the phone. No one ended the call. We heard everything.</p>
+                <p>Through the noise, we caught fragments. Someone was shouting about a monitoring device not being
+                  attached. There was argument over whose responsibility it was. Voices overlapped. No one was calm. And
+                  then the call disconnected.</p>
+                <p>For a few seconds, we sat frozen. Not because we did not understand what we heard. But because we
+                  understood too many possibilities at once. Was that Kalu? Was his monitor disconnected? Was he the dog
+                  collapsing in the background? Had we just heard the moment everything went wrong? There was no way to
+                  know. And there was no one explaining.</p>
+                <p>We called back immediately. No answer. We called again. No answer. The minutes stretched. Fear does
+                  something strange at moments like this, it creates images you cannot stop. We did not imagine worst
+                  cases. We imagined uncertainty.</p>
+
+                <h4 class="title is-6">Clinic Response</h4>
+                <p>At around 12:05 AM, someone finally answered. We asked directly about the shouting and the argument.
+                  The response was simple: "That was another dog." No explanation. No context. No reassurance beyond the
+                  sentence itself. We were told Kalu was okay. Vitals were fine. We asked again. We were told the same
+                  thing.</p>
+
+                <h4 class="title is-6">Our Clarification</h4>
+                <p>We accepted the explanation because we had no choice. But one question stayed with us, unanswered. If
+                  that was another dog, what happened to that dog? Did it survive? Did it collapse? Did it die? We were
+                  never told. And that silence mattered.</p>
+                <p>By that point, something had shifted inside us. Until then, we had trusted that whatever was
+                  happening
+                  inside the ICU was controlled, even if it was serious. After that call, trust became conditional. Not
+                  because of intent. Not because of accusation. Because information had fractured.</p>
+                <p>From that moment on, we started recording calls. Not to accuse. To protect ourselves from not
+                  knowing.
+                </p>
+                <p>That night, sleep did not come. Not because we were waiting for a call. But because our minds were
+                  replaying the same sounds. The shouting. The beeping. The abrupt silence. We lay there, counting
+                  minutes, checking phones, imagining updates that never came. We were inside rules, but outside care.
+                </p>
+                <p>Eventually, the night thinned into morning. There was no closure to that call. No follow-up message.
+                  No
+                  proactive update.</p>
+              </div>
+            </div>
+
+            <div class="relative timeline-dot mb-10">
+              <div class="box">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h3 class="title is-5 mb-0">11.0 Morning, Clarity, and a New Kind of Panic [14 Dec 2025]</h3>
+                  <span class="tag is-warning status-pill">Mixed</span>
+                </div>
+                <h4 class="title is-6">Our Account</h4>
+                <p>Morning arrived, but it did not bring relief. It brought exposure. The kind that happens when you
+                  finally see something in daylight that you were forced to imagine in the dark.</p>
+                <p>We reached Raintree as early as we could. Not because we expected good news. But because we needed
+                  confirmation. After a night filled with fragments, shouting, beeping, silence, seeing Kalu with our
+                  own
+                  eyes was the only thing that mattered.</p>
+                <p>Visiting hours began. We were allowed in.</p>
+                <p>Kalu was there. Alive. That alone steadied us for a moment. But his condition had changed. He looked
+                  more tired. More withdrawn. His responses were slower. The spark we had seen after MRI the previous
+                  evening felt dimmer. This was not sudden collapse. It was drift. The kind that happens when the body
+                  is
+                  fighting on too many fronts at once.</p>
+                <p>We asked what had happened during the night. The answers came in pieces. No single explanation. No
+                  clear timeline. Just reassurances layered over concern. Vitals. Monitoring. Stability. Words that
+                  sound
+                  safe, but do not explain progression.</p>
+                <p>We asked about the shouting we heard on the call. The explanation remained the same: "It was another
+                  dog." No additional detail. No acknowledgement of how terrifying that sounded to us as parents waiting
+                  at home. The topic moved on quickly.</p>
+                <p>As discussions continued, something else became clear. Most explanations were framed in technical
+                  terms. Values. Indicators. Clinical phrasing. We tried to keep up. But when you are emotionally
+                  exhausted, jargon becomes a barrier, not information.</p>
+                <p>At one point, my sister asked about moving Kalu to another place. The response from the main doctor
+                  that morning, Dr. Leila Fernandez, was restrained, almost detached. It was not hostility. It was
+                  fatigue. She mentioned that moving him was possible, but she did not encourage it.</p>
+                <p>I knew then that Kalu was not in a condition to be moved again. I said clearly that we would not be
+                  taking him anywhere else. As his owner, that responsibility was mine.</p>
+                <p>Later, after continued questions, the same doctor explained Kalu's condition again, this time in
+                  simpler language. Not because the facts had changed. But because we needed meaning, not numbers. That
+                  explanation brought brief relief. Not hope. Understanding.</p>
+                <p>Around noon, the conversation shifted. Kalu had developed clotting issues. We were told he needed
+                  fresh
+                  plasma urgently. There was no delay in urgency. But there was delay in solution. We were told that we
+                  would need to arrange a donor dog.</p>
+                <p>The criteria were strict: vaccinated dog, weight 25 kg or more, no history of tick fever, not on
+                  antibiotics or other medications. We did not have such a dog. The clinic's known donor dogs were
+                  already
+                  exhausted from previous donations. There was no blood bank to draw from. There was no ready plasma
+                  available.</p>
+                <p>What was urgent medically became logistically impossible.</p>
+                <p>We stepped outside. Phones came out immediately. We started calling: friends, friends of friends,
+                  NGOs,
+                  WhatsApp groups, Instagram, Facebook. We posted messages everywhere. Time did not slow down for
+                  effort.
+                  The more urgent the need became, the more clearly we saw how fragile the system was. There was no
+                  central coordination. No fallback. Just desperate outreach.</p>
+                <p>Finally, a woman we had never met, Lady X, agreed to help. She was coming from far away with her dog.
+                  That yes felt unreal. Relief mixed with fear. Would the dog meet criteria? Would the blood match?
+                  Would
+                  time run out before she arrived? We waited.</p>
+
+                <h4 class="title is-6">Clinic Response</h4>
+                <p>We were told he needed fresh plasma urgently. We were told that we would need to arrange a donor dog.
+                </p>
+
+                <h4 class="title is-6">Our Clarification</h4>
+                <p>What was urgent medically became logistically impossible.</p>
+              </div>
+            </div>
+
+            <div class="relative timeline-dot mb-10">
+              <div class="box">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h3 class="title is-5 mb-0">12.0 When Help Arrived, But Time Did Not Wait [15 Dec 2025]</h3>
+                  <span class="tag is-warning status-pill">Mixed</span>
+                </div>
+                <h4 class="title is-6">Our Account</h4>
+                <p>The morning of 15 December 2025 did not begin with questions. It began with fatigue. Not the kind
+                  that
+                  sleep fixes. The kind that settles into bones after days of alertness without rest.</p>
+                <p>We reached Raintree again, carrying the weight of the previous night's pause. Lady X had already done
+                  more than anyone could reasonably ask. And yet, everything still depended on what the system could do
+                  next.</p>
+                <p>We asked about the blood sample taken the previous night. The responses were unclear. Someone
+                  mentioned
+                  platelets. Someone mentioned mismatch. Someone said something did not align. There was no single
+                  explanation that connected all the pieces. Information came indirectly, sometimes to my sister,
+                  sometimes to us, and often without context. Confusion grew not because things were complex, but
+                  because
+                  they were not explained cleanly.</p>
+                <p>Later that day, when Dr. Leila Fernandez reviewed the situation again, the message changed. We were
+                  told that Lady X's dog was suitable, and that further blood extraction could proceed.</p>
+                <p>The requirements were laid out clearly: the donor dog should be fasting, no food for 4 hours, no
+                  water
+                  for 2 hours before extraction. We contacted Lady X again. She was working. She rearranged her day. Her
+                  husband helped. She came back. This mattered more to us than any protocol.</p>
+                <p>Lady X's dog was sedated. Blood was extracted. We watched this with a mix of gratitude and fear.
+                  Gratitude for a stranger's kindness. Fear that even this might not be enough.</p>
+                <p>We asked repeatedly for the clinic to post donor requests on their own platforms. They did, but with
+                  delay. By then, we had already mobilised on our own.</p>
+                <p>As hours passed, it became clear that backup was necessary. If Lady X's blood did not work, there
+                  would
+                  be no time to start again. So we kept calling.</p>
+                <p>By the end of the day, around 10 dogs were contacted or arranged. Some were physically brought. Some
+                  sent samples via nearby clinics. Some did not meet weight criteria. Some did not match. Some were
+                  ruled
+                  out for medical reasons.</p>
+                <p>This was not a process. It was crowdsourced survival.</p>
+                <p>Lady X's dog's blood was extracted around 2:30 PM. The plan was plasma separation. But there was a
+                  problem. There was no centrifuge available for plasma separation. We were told that natural separation
+                  would be attempted, a process that takes hours.</p>
+                <p>We waited. Time passed. After six hours, we were told that the natural process was not working.</p>
+                <p>My wife has experience in pathology. She suggested finding an external centrifuge machine at a known
+                  lab or blood bank to separate plasma. We raised this possibility. One of the main doctors acknowledged
+                  that it could work. We started looking immediately. But time was slipping. The blood had been
+                  extracted
+                  at noon. The usable window was narrowing.</p>
+                <p>Eventually, a decision was made. Instead of plasma alone, they would attempt a direct blood
+                  transfusion. We agreed. At this point, agreement was not optimism. It was necessity.</p>
+                <p>We were told the transfusion would take around four hours. We were told it would be stopped if Kalu's
+                  temperature rose.</p>
+                <p>At around 8:30 PM, the blood transfusion began. We waited. Every minute felt like negotiation with
+                  fate.</p>
+                <p>At around 10:30 PM, we were informed that Kalu's temperature had risen. The transfusion was stopped.
+                  There was no argument. There was no protest. This was protocol. And protocol had now replaced hope.
+                </p>
+                <p>That night, the language shifted again. The tone became heavier. Words like poor prognosis began to
+                  surface more openly. We were told that we might need to consider a final decision. We did not accept
+                  that yet. Not because we were in denial. But because Kalu was still alive.</p>
+                <p>By the end of 15 December, we were no longer fighting for recovery. We were fighting for time. Time
+                  to
+                  understand. Time to decide. Time to be present.</p>
+                <p>We even discussed, quietly, the possibility of taking Kalu to his favourite place one last time
+                  before
+                  letting him go peacefully at a regular vet. That thought alone felt unbearable. But it entered the
+                  room.
+                </p>
+                <p>Night fell without resolution.</p>
+
+                <h4 class="title is-6">Clinic Response</h4>
+                <p>We were told that Lady X's dog was suitable, and that further blood extraction could proceed. We were
+                  told that natural separation would be attempted, a process that takes hours. After six hours, we were
+                  told that the natural process was not working. We were told the transfusion would take around four
+                  hours. We were told it would be stopped if Kalu's temperature rose. At around 10:30 PM, we were
+                  informed
+                  that Kalu's temperature had risen.</p>
+
+                <h4 class="title is-6">Our Clarification</h4>
+                <p>This was not a process. It was crowdsourced survival.</p>
+              </div>
+            </div>
+
+            <div class="relative timeline-dot">
+              <div class="box">
+                <div class="flex flex-wrap items-center gap-3">
+                  <h3 class="title is-5 mb-0">13.0 The Day He Left [16 Dec 2025]</h3>
+                  <span class="tag is-success status-pill">Partially aligned</span>
+                </div>
+                <h4 class="title is-6">Our Account</h4>
+                <p>The morning of 16 December 2025 arrived without negotiation. There was no sense of maybe today will
+                  be
+                  better. There was no false optimism left. There was only presence.</p>
+                <p>When we reached Raintree that morning, Kalu was still alive. But his body was no longer holding
+                  itself
+                  together. The signs were visible, even before anyone explained them. His paws were swollen. His
+                  abdomen
+                  was distended. His urine was red, showing internal bleeding.</p>
+                <p>We were told that his liver and kidneys were failing. The words multiple organ failure were no longer
+                  implied, they were spoken. This was no longer about one injury. It was systemic.</p>
+                <p>The staff adjusted his position. They spread his legs gently to help with breathing. They tried to
+                  reduce pressure on his lungs and spine. This was not treatment anymore. This was comfort. And that
+                  distinction was devastating.</p>
+                <p>At some point that morning, the conversation everyone dreads entered the room. We were told that we
+                  might need to consider letting Kalu go peacefully. Not as a recommendation framed gently over time,
+                  but
+                  as a possibility that had arrived suddenly.</p>
+                <p>We listened. We did not argue. But we were not ready. Not because we did not understand the reality.
+                  But because Kalu was still there. He was still breathing. He was still warm. He was still present. As
+                  long as that was true, we wanted everything possible to be done. We said that clearly.</p>
+                <p>Around 12:00 PM, Kalu stopped breathing. There was no warning alarm. No gradual slowdown. It happened
+                  suddenly. One moment there was movement. The next, there was not.</p>
+                <p>CPR was initiated immediately. Protocols were followed. Intubation. Chest compressions. Manual air
+                  pumping with an ambu-bag. Kalu responded briefly. For a moment, it felt like he came back. That moment
+                  gave false hope. Within 10 to 15 minutes, his body gave out again. This time, there was no return.</p>
+                <p>I was watching his face. Not the monitors. His eyes did not move. His chest did not rise on its own.
+                  There was no response, no reflex, no awareness. I said it out loud. "He is gone." I looked at the
+                  assigned vet, Anushree, and said it again. She acknowledged it.</p>
+                <p>And yet, the ambu-bag was still being pressed. Air was still being pushed into a body that had
+                  already
+                  let go. I asked her to stop. Only then was the bag removed.</p>
+                <p>What followed was not immediate closure. Tubes were not removed right away. Monitoring equipment
+                  stayed
+                  attached longer than it should have. Kalu lay there, still connected, still medicalized, even though
+                  life had already left. That image is difficult to erase.</p>
+                <p>There was no preparation. No soft transition. No emotional grounding. No one spoke to us about what
+                  would happen next. There was no moment of shared silence. Only procedure.</p>
+                <p>We cleared the bills without dispute. Advance payments had already been taken daily. Money felt
+                  irrelevant at that point. It was not about cost. It was about ending with dignity, and that had
+                  already
+                  passed.</p>
+                <p>We took Kalu to the cremation facility near Naidu Hospital, Sangamwadi. We called everyone who loved
+                  him. Friends. Family. Those who had known him as more than a dog. We performed the rituals. We stayed
+                  until the end.</p>
+                <p>When we returned home, the house felt unfamiliar. Not empty. Unrecognizable. No footsteps. No
+                  movement.
+                  No presence.</p>
+                <p>Night came again. And for the first time in nine years, there was no reason to open the door after 9
+                  PM. No night walk. No return.</p>
+                <p>Kalu did not leave quietly. He fought. We fought with him. We accept that he may not have survived
+                  anywhere. But survival is not the only measure of care. Empathy matters. Communication matters.
+                  Preparedness matters. And when systems fail, the weight falls entirely on those who love.</p>
+                <p>For Kalu.</p>
+
+                <h4 class="title is-6">Clinic Response</h4>
+                <p>We were told that his liver and kidneys were failing.</p>
+
+                <h4 class="title is-6">Our Clarification</h4>
+                <p>As long as he was still there, we wanted everything possible to be done. We said that clearly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="aftermath" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 9">What Stayed, What Broke, and Why This Exists [16 Dec 2025]</h2>
+        <h3 class="title is-5">14.1 The First Days After [16 Dec 2025]</h3>
+        <p>After 16 December 2025, there was no next step. There was no treatment plan. No follow-up call. No "what
+          happens now." There was only absence.</p>
+        <p>The days immediately after Kalu's passing were not dramatic. They were empty. Not the kind of emptiness that
+          screams, the kind that settles quietly into every corner of the house. Doors stayed closed longer. Lights
+          stayed off more. Sounds felt unnecessary. Night came without purpose.</p>
+        <p>For nine years, night had meant something. A walk. A return. Movement. Now it meant nothing.</p>
+
+        <h3 class="title is-5">14.2 Grief Did Not Arrive All at Once [16 Dec 2025]</h3>
+        <p>Grief came in fragments. Sometimes as anger. Sometimes as guilt. Sometimes as numbness. Not all at the
+          hospital. Not all at the accident. Often at small, unexpected moments. Opening the door and expecting
+          movement. Hearing a sound and turning instinctively. Reaching for a routine that no longer existed. Grief did
+          not ask for permission.</p>
+
+        <h3 class="title is-5">14.3 The Questions That Would Not Leave [16 Dec 2025]</h3>
+        <p>With time, grief stopped being loud and became persistent. Questions surfaced, not because we wanted someone
+          to blame, but because things did not add up.</p>
+        <p>Why was there no stretcher? Why did availability matter more than urgency? Why was empathy absent when
+          outcome was uncertain? Why did communication fail when clarity was most needed? Why did everything depend on
+          one place, one system, one bottleneck?</p>
+        <p>These were not questions asked in anger. They were questions asked because we did everything we were told to
+          do. And still, we were left feeling uninformed, unprepared, and emotionally abandoned.</p>
+
+        <h3 class="title is-5">14.4 Accepting the Outcome, Not the Experience [16 Dec 2025]</h3>
+        <p>We accepted that Kalu may not have survived anywhere. That acceptance came early. What did not sit right was
+          the experience. The lack of guidance. The lack of emotional preparation. The reliance on rigid systems during
+          human moments.</p>
+        <p>Critical care is not only about machines. It is about how people are treated when they are already breaking.
+        </p>
+
+        <h3 class="title is-5">14.5 Hearing Other Stories [16 Dec 2025]</h3>
+        <p>In the days that followed, we spoke to other pet parents. Quietly. Privately. Some shared similar
+          experiences. Some chose not to speak publicly. We do not speak on their behalf. But hearing them confirmed one
+          thing: What we experienced was not isolated.</p>
+
+        <h3 class="title is-5">14.6 Why We Chose to Write [16 Dec 2025]</h3>
+        <p>This website, this archive, this record, it is not revenge. It is not an attack. It exists for three reasons:
+        </p>
+        <p>To honour Kalu's life, not just his death.</p>
+        <p>To document a real critical-care journey, without exaggeration.</p>
+        <p>To help other pet parents prepare, emotionally and practically, before emergencies happen.</p>
+        <p>Silence protects systems. Truth protects people.</p>
+
+        <h3 class="title is-5">14.7 What This Is, and What It Is Not [16 Dec 2025]</h3>
+        <p>This is not a call to boycott. Not a demand for punishment. Not a denial of medical complexity.</p>
+        <p>It is a request for better communication, better empathy, better preparedness, better alternatives in a city
+          that deserves more than one option, especially when lives depend on it.</p>
+
+        <h3 class="title is-5">14.8 Responsibility Without Regret [16 Dec 2025]</h3>
+        <p>We do not regret fighting. We do not regret spending. We do not regret insisting. We would do it all again.
+          Because Kalu fought. And when someone you love is fighting, you do not calculate outcomes, you show up.</p>
+
+        <h3 class="title is-5">14.9 Kalu's Legacy [16 Dec 2025]</h3>
+        <p>Kalu's life was not defined by his end. He lived freely. He loved deeply. He adapted constantly. He held a
+          family together when it was fragile. He chose people when it mattered. He trusted us with his life.</p>
+        <p>This archive exists because that trust deserves respect.</p>
+
+        <h3 class="title is-5">14.10 If You Are Reading This as a Pet Parent [16 Dec 2025]</h3>
+        <p>Please understand this: emergencies remove choice. Systems matter. Preparation matters. Ask questions before
+          you need answers. Know your options before panic narrows them. Demand clarity before exhaustion takes it away.
+          And never feel ashamed for asking for empathy.</p>
+        <p>For Kalu.</p>
+        <p>Kalu was not perfect. He was not easy. He was not replaceable. He was family. A small brother. A constant
+          presence. A life that mattered. This is for him.</p>
+      </section>
+
+      <section id="learnings" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 11">Learnings for Pet Parents</h2>
+        <h3 class="title is-5">15.1 Before an Emergency</h3>
+        <div class="content">
+          <ul>
+            <li>Save 3 contacts: nearest 24/7 ICU, nearest trauma-capable clinic, emergency transport option.</li>
+            <li>Ask upfront: ICU availability, imaging flow, blood/plasma process, donor steps, visiting policy.</li>
+          </ul>
+        </div>
+        <h3 class="title is-5">15.2 During Admission</h3>
+        <div class="content">
+          <ul>
+            <li>Ask for a written summary: current status + key risks + monitoring plan.</li>
+            <li>Ask who is the night point-of-contact and how often updates will come.</li>
+          </ul>
+        </div>
+        <h3 class="title is-5">15.3 During Imaging (MRI/CT)</h3>
+        <div class="content">
+          <ul>
+            <li>Ask: where it happens, transport method, anesthesia plan, expected report timeline.</li>
+            <li>Ask: what happens if the specialist/report is delayed.</li>
+          </ul>
+        </div>
+        <h3 class="title is-5">15.4 During Transfusion</h3>
+        <div class="content">
+          <ul>
+            <li>Ask: trigger criteria, alternatives, monitoring protocol, risks, and reaction handling.</li>
+          </ul>
+        </div>
+        <h3 class="title is-5">15.5 Communication Standards to Expect</h3>
+        <div class="content">
+          <ul>
+            <li>Clear and simple explanations.</li>
+            <li>Defined update frequency.</li>
+            <li>Clear next steps for the next 6 to 12 hours.</li>
+          </ul>
+        </div>
+      </section>
+
+            <div class="quote-card">
+        <p class="quote-text">Every place was a memory. Every memory was a way of being loved.</p>
+        <p class="quote-source">Life Gallery</p>
+      </div>
+
+<section id="gallery" class="box section-card gallery">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 10">Life Gallery Timeline</h2>
+        <p class="is-size-6">These are my memories, in my own words — one moment at a time.</p>
+
+        <h3 class="title is-5">Early home life</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/01-just-me-in-a-quiet-moment.jpg"
+              alt="Just me, in a quiet moment." />
+            <figcaption class="p-3 text-sm text-gray-600">Just me, in a quiet moment.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/02-my-lovely-eyes.jpg" alt="My lovely eyes." />
+            <figcaption class="p-3 text-sm text-gray-600">My lovely eyes.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/03-im-sleeping.jpg" alt="I’m sleeping." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m sleeping.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/04-i-love-this-garden-grass.jpg"
+              alt="I love this garden grass." />
+            <figcaption class="p-3 text-sm text-gray-600">I love this garden grass.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/05-im-the-good-boy-waiting-to-go-out.jpg"
+              alt="I’m the good boy waiting to go out." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m the good boy waiting to go out.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/06-im-waiting-for-you-to-finish-office-work.jpg"
+              alt="I’m waiting for you to finish office work." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m waiting for you to finish office work.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/07-im-waiting-for-you-to-say-my-favorite-word.jpg"
+              alt="I’m waiting for you to say my favorite word." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m waiting for you to say my favorite word.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/08-me-and-my-human.jpg" alt="Me and my human." />
+            <figcaption class="p-3 text-sm text-gray-600">Me and my human.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/09-together-always.jpg" alt="Together, always." />
+            <figcaption class="p-3 text-sm text-gray-600">Together, always.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/10-a-long-hug-with-my-human.jpg"
+              alt="A long hug with my human." />
+            <figcaption class="p-3 text-sm text-gray-600">A long hug with my human.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/11-hey-human-tell-her-im-getting-crushed-in-her-arms.jpg"
+              alt="Hey human, tell her I’m getting crushed in her arms." />
+            <figcaption class="p-3 text-sm text-gray-600">Hey human, tell her I’m getting crushed in her arms.
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/early-home-life/12-hey-human-im-a-good-boy-take-me-out.jpg"
+              alt="Hey human, I’m a good boy. Take me out." />
+            <figcaption class="p-3 text-sm text-gray-600">Hey human, I’m a good boy. Take me out.</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="title is-5">Home routines</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/home-routines/01-watching-tv-with-you-at-home.jpg"
+              alt="Watching TV with you at home." />
+            <figcaption class="p-3 text-sm text-gray-600">Watching TV with you at home.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/home-routines/02-sleep-mode-at-home.jpg" alt="Sleep mode at home." />
+            <figcaption class="p-3 text-sm text-gray-600">Sleep mode at home.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/home-routines/03-waiting-to-go-outside.jpg" alt="Waiting to go outside." />
+            <figcaption class="p-3 text-sm text-gray-600">Waiting to go outside.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/home-routines/04-hey-human-scratch-my-back.jpg"
+              alt="Hey human, scratch my back." />
+            <figcaption class="p-3 text-sm text-gray-600">Hey human, scratch my back.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/home-routines/05-enjoying-the-festive-mood.jpg"
+              alt="Enjoying the festive mood." />
+            <figcaption class="p-3 text-sm text-gray-600">Enjoying the festive mood.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/home-routines/06-bath-time-i-dont-like-it.jpg"
+              alt="Bath time — I don’t like it." />
+            <figcaption class="p-3 text-sm text-gray-600">Bath time — I don’t like it.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/home-routines/07-im-shivering-after-the-bath.jpg"
+              alt="I’m shivering after the bath." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m shivering after the bath.</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="title is-5">Play, peek-a-boo, rolling, watching</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/01-im-on-watch-join-me.jpg"
+              alt="I’m on watch. Join me." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m on watch. Join me.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/02-im-on-watch-but-lazy.jpg"
+              alt="I’m on watch… but lazy." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m on watch… but lazy.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/03-im-on-watch-say-my-favorite-word-going-out.jpg"
+              alt="I’m on watch. Say my favorite word: going out." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m on watch. Say my favorite word: going out.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/04-peek-a-boo-where-are-you.jpg"
+              alt="Peek-a-boo — where are you?" />
+            <figcaption class="p-3 text-sm text-gray-600">Peek-a-boo — where are you?</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/05-hey-human-i-hate-this-peek-a-boo.jpg"
+              alt="Hey human, I hate this peek-a-boo." />
+            <figcaption class="p-3 text-sm text-gray-600">Hey human, I hate this peek-a-boo.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/06-hey-human-i-learned-to-roll-on-the-wall.jpg"
+              alt="Hey human, I learned to roll on the wall." />
+            <figcaption class="p-3 text-sm text-gray-600">Hey human, I learned to roll on the wall.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/07-yes-thats-the-spot-scratch-it.jpg"
+              alt="Yes, that’s the spot. Scratch it." />
+            <figcaption class="p-3 text-sm text-gray-600">Yes, that’s the spot. Scratch it.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/08-im-searching-for-the-right-spot.jpg"
+              alt="I’m searching for the right spot." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m searching for the right spot.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/09-im-enjoying-this-cap.jpg"
+              alt="I’m enjoying this cap." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m enjoying this cap.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/10-with-headphones-i-loved-this-song.jpg"
+              alt="With headphones: I loved this song." />
+            <figcaption class="p-3 text-sm text-gray-600">With headphones: I loved this song.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/11-with-headphones-i-hate-this-song-what-is-this.jpg"
+              alt="With headphones: I hate this song. What is this?" />
+            <figcaption class="p-3 text-sm text-gray-600">With headphones: I hate this song. What is this?</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/12-with-headphones-what-again-boring.jpg"
+              alt="With headphones: what, again? Boring." />
+            <figcaption class="p-3 text-sm text-gray-600">With headphones: what, again? Boring.</figcaption>
+          </figure>
+
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/play-peek-a-boo-rolling-watching/13-hey-human-how-long-will-this-renovation-last.jpg"
+              alt="Hey human, how long will this renovation last?" />
+            <figcaption class="p-3 text-sm text-gray-600">Hey human, how long will this renovation last?</figcaption>
+          </figure>
+
+        </div>
+
+        <h3 class="title is-5">Car rides</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/car-rides/01-i-want-to-drive-the-alto.jpg" alt="I want to drive the Alto." />
+            <figcaption class="p-3 text-sm text-gray-600">I want to drive the Alto.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/car-rides/02-i-liked-the-new-cars-spaciousness.jpg"
+              alt="I liked the new car’s spaciousness." />
+            <figcaption class="p-3 text-sm text-gray-600">I liked the new car’s spaciousness.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/car-rides/03-hey-human-dont-go-to-work-take-me-for-a-car-ride.jpg"
+              alt="Hey human, don’t go to work. Take me for a car ride." />
+            <figcaption class="p-3 text-sm text-gray-600">Hey human, don’t go to work. Take me for a car ride.
+            </figcaption>
+          </figure>
+        </div>
+
+        <h3 class="title is-5">Trips: Ghoradeshwar</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trips-ghoradeshwar/01-i-arrived-first-where-are-the-humans.jpg"
+              alt="I arrived first. Where are the humans?" />
+            <figcaption class="p-3 text-sm text-gray-600">I arrived first. Where are the humans?</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trips-ghoradeshwar/02-i-reached-the-temple-for-our-final-visit.jpg"
+              alt="I reached the temple for our final visit." />
+            <figcaption class="p-3 text-sm text-gray-600">I reached the temple for our final visit.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trips-ghoradeshwar/03-im-watching-the-goats-curious-and-alert.jpg"
+              alt="I’m watching the goats, curious and alert." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m watching the goats, curious and alert.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trips-ghoradeshwar/04-im-watching-the-river-for-the-first-time.jpg"
+              alt="I’m watching the river for the first time." />
+            <figcaption class="p-3 text-sm text-gray-600">I’m watching the river for the first time.</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="title is-5">Trip: Ladhghar sea beach</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/01-ladhghar-are-we-going-out-or-not.jpg"
+              alt="Ladhghar — are we going out or not?" />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — are we going out or not?</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/02-ladhghar-im-lazy.jpg" alt="Ladhghar — I’m lazy." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — I’m lazy.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/03-ladhghar-enjoying-this-big-bed.jpg"
+              alt="Ladhghar — enjoying this big bed." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — enjoying this big bed.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/04-ladhghar-who-is-that-giant-human-statue.jpg"
+              alt="Ladhghar — who is that giant human statue?" />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — who is that giant human statue?</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/05-ladhghar-watching-the-leopard-statue-hey-human-this-cat-is-big-and-not-scared-of-me.jpg"
+              alt="Ladhghar — watching the leopard statue. Hey human, this cat is big and not scared of me." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — watching the leopard statue. Hey human, this cat is
+              big and not scared of me.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/06-ladhghar-hey-human-whats-this-new-place-im-already-tired-from-the-long-car-journey.jpg"
+              alt="Ladhghar — hey human, what’s this new place? I’m already tired from the long car journey." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey human, what’s this new place? I’m already tired
+              from the long car journey.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/07-ladhghar-hey-look-at-the-bullock-cart-can-i-get-a-ride.jpg"
+              alt="Ladhghar — hey, look at the bullock cart. Can I get a ride?" />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey, look at the bullock cart. Can I get a ride?
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/08-ladhghar-hey-human-im-investigating-this-new-sand.jpg"
+              alt="Ladhghar — hey human, I’m investigating this new sand." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey human, I’m investigating this new sand.
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/09-ladhghar-hey-human-i-like-this-wet-sand-its-cool.jpg"
+              alt="Ladhghar — hey human, I like this wet sand. It’s cool." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey human, I like this wet sand. It’s cool.
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/10-ladhghar-hey-human-this-is-my-footprint.jpg"
+              alt="Ladhghar — hey human, this is my footprint." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey human, this is my footprint.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/11-ladhghar-hey-human-im-posing-take-my-photo.jpg"
+              alt="Ladhghar — hey human, I’m posing. Take my photo." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey human, I’m posing. Take my photo.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/12-ladhghar-my-best-pose-capture-it.jpg"
+              alt="Ladhghar — my best pose. Capture it." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — my best pose. Capture it.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/13-ladhghar-yeah-i-might-consider-going-near-the-ocean.jpg"
+              alt="Ladhghar — yeah, I might consider going near the ocean." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — yeah, I might consider going near the ocean.
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/14-ladhghar-no-im-not-coming-near-that-ocean-water.jpg"
+              alt="Ladhghar — no, I’m not coming near that ocean water." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — no, I’m not coming near that ocean water.
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/15-ladhghar-come-on-human-im-waiting-near-the-ocean.jpg"
+              alt="Ladhghar — come on, human. I’m waiting near the ocean." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — come on, human. I’m waiting near the ocean.
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/16-ladhghar-hey-human-i-finally-touched-the-sea-water.jpg"
+              alt="Ladhghar — hey human, I finally touched the sea water." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey human, I finally touched the sea water.
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/17-ladhghar-hey-human-i-liked-the-sea.jpg"
+              alt="Ladhghar — hey human, I liked the sea." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey human, I liked the sea.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/trip-ladhghar-sea-beach/18-ladhghar-hey-human-this-river-is-so-big.jpg"
+              alt="Ladhghar — hey human, this river is so big." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — hey human, this river is so big.</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="title is-5">Birthdays</h3>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/birthdays/01-my-7th-birthday.jpg" alt="My 7th birthday." />
+            <figcaption class="p-3 text-sm text-gray-600">My 7th birthday.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/birthdays/02-my-8th-birthday.jpg" alt="My 8th birthday." />
+            <figcaption class="p-3 text-sm text-gray-600">My 8th birthday.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/birthdays/03-my-8th-birthday-hey-human-i-dont-like-cake-bring-me-chicken.jpg"
+              alt="My 8th birthday — hey human, I don’t like cake. Bring me chicken." />
+            <figcaption class="p-3 text-sm text-gray-600">My 8th birthday — hey human, I don’t like cake. Bring me
+              chicken.</figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl overflow-hidden shadow-sm">
+            <img decoding="async" loading="lazy" class="w-full h-[320px] object-cover"
+              src="kalu_gallery/timeline/birthdays/04-ladhghar-my-9th-birthday-i-dont-like-cake-im-waiting-for-chicken.jpg"
+              alt="Ladhghar — my 9th birthday. I don’t like cake. I’m waiting for chicken." />
+            <figcaption class="p-3 text-sm text-gray-600">Ladhghar — my 9th birthday. I don’t like cake. I’m waiting for
+              chicken.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+            <div class="quote-card">
+        <p class="quote-text">He was family. Loved. Fought for. Never forgotten.</p>
+        <p class="quote-source">Closing Note</p>
+      </div>
+
+<section id="memory" class="box section-card">
+        <h2 class="title is-3 chapter-title" data-chapter="Chapter 12">Closing Note</h2>
+        <p>Kalu was not a case. He was not a patient. He was family.</p>
+        <p>He lived freely. He loved deeply. He adapted constantly. He held a family together when it was fragile. He
+          chose people when it mattered. He trusted us with his life.</p>
+        <p>He fought. We fought with him. We accept that he may not have survived anywhere. But survival is not the only
+          measure of care. Empathy matters. Communication matters. Preparedness matters.</p>
+        <p>Kalu was a small brother. A constant presence. A life that mattered. Never forgotten.</p>
+        <p>— For Kalu 🐾</p>
+        <figure class="mt-6 bg-white rounded-2xl overflow-hidden shadow-sm">
+          <img loading="lazy" decoding="async" class="w-full object-contain grayscale" src="kalu_gallery/closing/final-goodbye.jpg"
+            alt="Kalu's final goodbye." />
+          <figcaption class="p-3 text-sm text-gray-600">Kalu's final goodbye.</figcaption>
+        </figure>
+      </section>
+
+    </div>
+  </main>
+
+  <button id="backToTop" class="button is-dark is-rounded fixed bottom-6 right-6 hidden" aria-label="Back to top"
+    type="button">
+    <span class="icon"><i class="fa-solid fa-arrow-up"></i></span>
+  </button>
+
+  <script>
+    const progressBar = document.getElementById( "progressBar" );
+    const backToTop = document.getElementById( "backToTop" );
+
+    const onScroll = () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = scrollHeight ? ( scrollTop / scrollHeight ) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+      if ( backToTop ) {
+        backToTop.classList.toggle( "hidden", scrollTop < 500 );
+      }
+    };
+
+    window.addEventListener( "scroll", onScroll );
+    onScroll();
+    if ( backToTop ) {
+      backToTop.addEventListener( "click", () => {
+        window.scrollTo( { top: 0, behavior: "smooth" } );
+      } );
+    }
+
+    const renderAltFallback = ( img ) => {
+      if ( !img || img.dataset.fallbackApplied === "true" ) return;
+      const altText = img.getAttribute( "alt" ) || "Image not available";
+      const fallback = document.createElement( "div" );
+      fallback.className = "image-fallback";
+      fallback.textContent = altText;
+      img.dataset.fallbackApplied = "true";
+      img.replaceWith( fallback );
+    };
+
+    document.querySelectorAll( "img" ).forEach( ( img ) => {
+      if ( img.complete && img.naturalWidth === 0 ) {
+        renderAltFallback( img );
+      } else {
+        img.addEventListener( "error", () => renderAltFallback( img ) );
+      }
+    } );
+  </script>
 </body>
 
 </html>
