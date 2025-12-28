@@ -476,6 +476,7 @@ Kalu did not care about distance. He cared about presence. Places he visited and
 - Jambhulwadi
 
 The place mattered less than being together.
+At Ladhghar, he especially enjoyed fish and the night-ride vibes there.
 
 ### 6.10 Small Moments That Defined Him [2016-2025]
 Recognising our vehicles and voices from inside the flat. Sitting in the garden watching birds, reacting instantly to cats. Late-night walks, going out and returning on his own. Rough play that shifted naturally back to calm. Enjoying rain walks while still hating bath time.
